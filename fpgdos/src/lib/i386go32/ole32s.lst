@@ -1,0 +1,140 @@
+In archive ole32s.lib:
+
+clipbrd.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CLIPBRD.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _OleFlushClipboard@0
+
+
+
+cocreate.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COCREATE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x20c nreloc 24 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x64 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FreeLibrary@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcAddress@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadLibraryA@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WideCharToMultiByte@32
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RegCloseKey@4
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RegOpenKeyA@12
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RegQueryValueA@16
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__wsprintfA
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _StringFromGUID2@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CoGetClassObject@20
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ec _CoCreateInstance@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000200 _CoCreateGuid@4
+[ 20](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000010 ??0000
+[ 21](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000028 ??0001
+[ 22](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 IID_IClassFactory
+[ 23](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003a ??0004
+[ 24](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000052 ??0005
+
+
+
+coinit.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COINIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x8c nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x10 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsGetValue@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsSetValue@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_TlsSlot
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CoInitialize@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000034 _CoInitializeEx@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _CoInitializeSecurity@36
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 _CoUninitialize@0
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _OleInitialize@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _OleUninitialize@0
+
+
+
+comalloc.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COMALLOC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x180 nreloc 19 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalAlloc@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalFree@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalHandle@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalReAlloc@12
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalSize@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _CoTaskMemAlloc@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000005c _CoTaskMemFree@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _CoTaskMemRealloc@8
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000090 _CoGetMalloc@8
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 IMallocVtbl
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x000000a4 _QueryInterface@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x000000f4 _AddRef@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000100 _Release@4
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x0000010c _Alloc@8
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x0000011c _Realloc@12
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000130 _Free@8
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000140 _GetSize@8
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000150 _DidAlloc@8
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000174 _HeapMinimize@4
+[ 25](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000000 _IMalloc
+[ 26](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000028 IID_IMalloc
+[ 27](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000038 IID_IUnknown
+
+
+
+storage.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STORAGE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _StgOpenStorage@24
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CreateStreamOnHGlobal@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _CreateItemMoniker@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _GetRunningObjectTable@8
+
+
+
+strgguid.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRGGUID.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x130 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x33 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__MultiByteToWideChar@24
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__wvsprintfA@12
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c _IIDFromString@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c _CLSIDFromString@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc _StringFromGUID2@12
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000118 _CLSIDFromProgID@8
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000124 _ProgIDFromCLSID@8
+[ 15](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0001
+
+

@@ -1,0 +1,119 @@
+In archive oleautos.lib:
+
+errinfo.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ERRINFO.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x68 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetErrorInfo@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 _GetErrorInfo@8
+[  8](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pErrorInfo
+
+
+
+object.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 OBJECT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xc nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetActiveObject@12
+
+
+
+safearay.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SAFEARAY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xa8 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SafeArrayCreate@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _SafeArrayDestroy@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _SafeArrayGetDim@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _SafeArrayGetElemsize@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _SafeArrayGetUBound@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _SafeArrayGetLBound@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _SafeArrayLock@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _SafeArrayUnlock@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _SafeArrayAccessData@8
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000006c _SafeArrayUnaccessData@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000078 _SafeArrayPtrOfIndex@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _SafeArrayGetElement@12
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000090 _SafeArrayPutElement@12
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _SafeArrayRedim@8
+
+
+
+sysstr.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SYSSTR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xfc nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalAlloc@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalFree@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenW@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SysAllocStringLen@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 _SysAllocString@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000005c _SysAllocStringByteLen@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000098 _SysStringLen@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ac _SysStringByteLen@4
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c0 _SysFreeString@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _SysReAllocStringLen@12
+
+
+
+typelib.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TYPELIB.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _LoadTypeLib@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _QueryPathOfRegTypeLib@20
+
+
+
+variant.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 VARIANT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x144 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x3 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__wsprintfA
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SysAllocString@4
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SysAllocStringByteLen@8
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SysFreeString@4
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SysStringByteLen@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _VariantInit@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c _VariantClear@4
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _VariantCopyInd@8
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _VariantCopy@8
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000007c _VariantChangeType@16
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _VariantChangeTypeEx@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000138 _VariantTimeToSystemTime@12
+[ 20](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0001
+
+

@@ -1,0 +1,91 @@
+unit JPG_read;
+interface
+uses objects;
+
+Function JPG_2_BMP(s:string;grppos:longint;var h:PStream):byte;
+
+implementation
+uses jinclude,jpeglib,jerror,jdapimin,jdmarker,jdatasrc,jdatadst,jdapistd,jmorecfg,cdjpeg,wrbmp;
+
+type
+  my_error_ptr = ^my_error_mgr;
+  my_error_mgr = record
+    pub : jpeg_error_mgr;	{ "public" fields }
+
+    setjmp_buffer : jmp_buf;	{ for return to caller }
+  end;
+
+procedure my_error_exit (cinfo : j_common_ptr); far;
+var
+  myerr : my_error_ptr;
+begin
+  { cinfo^.err really points to a my_error_mgr struct, so coerce pointer }
+  myerr := my_error_ptr (cinfo^.err);
+
+  { Always display the message. }
+  { We could postpone this until after returning, if we chose. }
+  cinfo^.err^.output_message (cinfo);
+
+  { Return control to the setjmp point }
+  longjmp(myerr^.setjmp_buffer, 1);
+end;
+
+Function JPG_2_BMP(s:string;grppos:longint;var h:PStream):byte;
+var cinfo : jpeg_decompress_struct;
+    jerr  : my_error_mgr;
+    num_scanlines : JDIMENSION;
+    dest_mgr : djpeg_dest_ptr;
+    jpg:file;
+    b:byte;
+begin
+
+
+{ We set up the normal JPEG error routines, then override error_exit. }
+  cinfo.err := jpeg_std_error(jerr.pub);
+  jerr.pub.error_exit := @my_error_exit;
+  jerr.pub.trace_level := 3;	{ I'm debbuging a lot (Nomssi) }
+  { Establish the setjmp return context for my_error_exit to use. }
+  if (setjmp(jerr.setjmp_buffer)<>0) then
+  begin
+    { If we get here, the JPEG code has signaled an error.
+      We need to clean up the JPEG object, close the input file, and return. }
+    { Nomssi: if we get here, we are in trouble, because e.g. cinfo.mem
+              is not guaranted to be NIL }
+    jpeg_destroy_decompress(@cinfo);
+    system.close(jpg);
+    exit(1);
+  end;
+JPG_2_BMP:=0;
+
+{cinfo.err := jpeg_std_error(jerr);}
+jpeg_create_decompress(@cinfo);
+
+Assign(jpg,s);
+Reset(jpg,1);
+Seek(jpg,grppos);   {zpusob jak cist zevnitr knihoven i kdyz neni podpora}
+enable_alt_io:=true;{pro vstup jako TStream}
+alt_io_write:=h;
+jpeg_stdio_src(@cinfo, @jpg);
+jpeg_read_header(@cinfo, TRUE);
+
+dest_mgr := jinit_write_bmp(@cinfo, FALSE);
+dest_mgr^.output_file := nil;
+jpeg_start_decompress(@cinfo);
+dest_mgr^.start_output (@cinfo, dest_mgr);
+
+while (cinfo.output_scanline < cinfo.output_height) do
+  begin
+    num_scanlines := jpeg_read_scanlines(@cinfo, dest_mgr^.buffer,
+					dest_mgr^.buffer_height);
+    dest_mgr^.put_pixel_rows (@cinfo, dest_mgr, num_scanlines);
+  end;
+dest_mgr^.finish_output (@cinfo, dest_mgr);
+jpeg_finish_decompress(@cinfo);
+jpeg_destroy_decompress(@cinfo);
+Close(jpg);
+enable_alt_io:=false;
+alt_io_write:=nil;
+end;
+
+
+end.

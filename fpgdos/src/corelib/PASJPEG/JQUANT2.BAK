@@ -1,0 +1,1376 @@
+Unit JQuant2;
+
+
+{ This file contains 2-pass color quantization (color mapping) routines.
+  These routines provide selection of a custom color map for an image,
+  followed by mapping of the image to that color map, with optional
+  Floyd-Steinberg dithering.
+  It is also possible to use just the second pass to map to an arbitrary
+  externally-given color map.
+
+  Note: ordered dithering is not supported, since there isn't any fast
+  way to compute intercolor distances; it's unclear that ordered dither's
+  fundamental assumptions even hold with an irregularly spaced color map. }
+
+{ Original: jquant2.c; Copyright (C) 1991-1996, Thomas G. Lane. }
+
+interface
+
+{$I jconfig.inc}
+
+uses
+  jmorecfg,
+  jdeferr,
+  jerror,
+  jutils,
+  jpeglib;
+
+{ Module initialization routine for 2-pass color quantization. }
+
+
+{GLOBAL}
+procedure jinit_2pass_quantizer (cinfo : j_decompress_ptr);
+
+implementation
+
+{ This module implements the well-known Heckbert paradigm for color
+  quantization.  Most of the ideas used here can be traced back to
+  Heckbert's seminal paper
+    Heckbert, Paul.  "Color Image Quantization for Frame Buffer Display",
+    Proc. SIGGRAPH '82, Computer Graphics v.16 #3 (July 1982), pp 297-304.
+
+  In the first pass over the image, we accumulate a histogram showing the
+  usage count of each possible color.  To keep the histogram to a reasonable
+  size, we reduce the precision of the input; typical practice is to retain
+  5 or 6 bits per color, so that 8 or 4 different input values are counted
+  in the same histogram cell.
+
+  Next, the color-selection step begins with a box representing the whole
+  color space, and repeatedly splits the "largest" remaining box until we
+  have as many boxes as desired colors.  Then the mean color in each
+  remaining box becomes one of the possible output colors.
+
+  The second pass over the image maps each input pixel to the closest output
+  color (optionally after applying a Floyd-Steinberg dithering correction).
+  This mapping is logically trivial, but making it go fast enough requires
+  considerable care.
+
+  Heckbert-style quantizers vary a good deal in their policies for choosing
+  the "largest" box and deciding where to cut it.  The particular policies
+  used here have proved out well in experimental comparisons, but better ones
+  may yet be found.
+
+  In earlier versions of the IJG code, this module quantized in YCbCr color
+  space, processing the raw upsampled data without a color conversion step.
+  This allowed the color conversion math to be done only once per colormap
+  entry, not once per pixel.  However, that optimization precluded other
+  useful optimizations (such as merging color conversion with upsampling)
+  and it also interfered with desired capabilities such as quantizing to an
+  externally-supplied colormap.  We have therefore abandoned that approach.
+  The present code works in the post-conversion color space, typically RGB.
+
+  To improve the visual quality of the results, we actually work in scaled
+  RGB space, giving G distances more weight than R, and R in turn more than
+  B.  To do everything in integer math, we must use integer scale factors.
+  The 2/3/1 scale factors used here correspond loosely to the relative
+  weights of the colors in the NTSC grayscale equation.
+  If you want to use this code to quantize a non-RGB color space, you'll
+  probably need to change these scale factors. }
+
+const
+  R_SCALE = 2;          { scale R distances by this much }
+  G_SCALE = 3;          { scale G distances by this much }
+  B_SCALE = 1;          { and B by this much }
+
+{ Relabel R/G/B as components 0/1/2, respecting the RGB ordering defined
+  in jmorecfg.h.  As the code stands, it will do the right thing for R,G,B
+  and B,G,R orders.  If you define some other weird order in jmorecfg.h,
+  you'll get compile errors until you extend this logic.  In that case
+  you'll probably want to tweak the histogram sizes too. }
+
+{$ifdef RGB_RED_IS_0}
+const
+  C0_SCALE = R_SCALE;
+  C1_SCALE = G_SCALE;
+  C2_SCALE = B_SCALE;
+{$else}
+const
+  C0_SCALE = B_SCALE;
+  C1_SCALE = G_SCALE;
+  C2_SCALE = R_SCALE;
+{$endif}
+
+
+{ First we have the histogram data structure and routines for creating it.
+
+  The number of bits of precision can be adjusted by changing these symbols.
+  We recommend keeping 6 bits for G and 5 each for R and B.
+  If you have plenty of memory and cycles, 6 bits all around gives marginally
+  better results; if you are short of memory, 5 bits all around will save
+  some space but degrade the results.
+  To maintain a fully accurate histogram, we'd need to allocate a "long"
+  (preferably unsigned long) for each cell.  In practice this is overkill;
+  we can get by with 16 bits per cell.  Few of the cell counts will overflow,
+  and clamping those that do overflow to the maximum value will give close-
+  enough results.  This reduces the recommended histogram size from 256Kb
+  to 128Kb, which is a useful savings on PC-class machines.
+  (In the second pass the histogram space is re-used for pixel mapping data;
+  in that capacity, each cell must be able to store zero to the number of
+  desired colors.  16 bits/cell is plenty for that too.)
+  Since the JPEG code is intended to run in small memory model on 80x86
+  machines, we can't just allocate the histogram in one chunk.  Instead
+  of a true 3-D array, we use a row of pointers to 2-D arrays.  Each
+  pointer corresponds to a C0 value (typically 2^5 = 32 pointers) and
+  each 2-D array has 2^6*2^5 = 2048 or 2^6*2^6 = 4096 entries.  Note that
+  on 80x86 machines, the pointer row is in near memory but the actual
+  arrays are in far memory (same arrangement as we use for image arrays). }
+
+
+const
+  MAXNUMCOLORS = (MAXJSAMPLE+1);        { maximum size of colormap }
+
+{ These will do the right thing for either R,G,B or B,G,R color order,
+  but you may not like the results for other color orders. }
+
+const
+  HIST_C0_BITS = 5;             { bits of precision in R/B histogram }
+  HIST_C1_BITS = 6;             { bits of precision in G histogram }
+  HIST_C2_BITS = 5;             { bits of precision in B/R histogram }
+
+{ Number of elements along histogram axes. }
+const
+  HIST_C0_ELEMS = (1 shl HIST_C0_BITS);
+  HIST_C1_ELEMS = (1 shl HIST_C1_BITS);
+  HIST_C2_ELEMS = (1 shl HIST_C2_BITS);
+
+{ These are the amounts to shift an input value to get a histogram index. }
+const
+  C0_SHIFT = (BITS_IN_JSAMPLE-HIST_C0_BITS);
+  C1_SHIFT = (BITS_IN_JSAMPLE-HIST_C1_BITS);
+  C2_SHIFT = (BITS_IN_JSAMPLE-HIST_C2_BITS);
+
+
+type                            { Nomssi }
+  RGBptr = ^RGBtype;
+  RGBtype = packed record
+    r,g,b : JSAMPLE;
+  end;
+type
+  histcell = UINT16;            { histogram cell; prefer an unsigned type }
+
+type
+  histptr = ^histcell {FAR};       { for pointers to histogram cells }
+
+type
+  hist1d = array[0..HIST_C2_ELEMS-1] of histcell; { typedefs for the array }
+  {hist1d_ptr = ^hist1d;}
+  hist1d_field = array[0..HIST_C1_ELEMS-1] of hist1d;
+                                  { type for the 2nd-level pointers }
+  hist2d = ^hist1d_field;
+  hist2d_field = array[0..HIST_C0_ELEMS-1] of hist2d;
+  hist3d = ^hist2d_field;         { type for top-level pointer }
+
+
+{ Declarations for Floyd-Steinberg dithering.
+
+  Errors are accumulated into the array fserrors[], at a resolution of
+  1/16th of a pixel count.  The error at a given pixel is propagated
+  to its not-yet-processed neighbors using the standard F-S fractions,
+                ...     (here)  7/16
+                3/16    5/16    1/16
+  We work left-to-right on even rows, right-to-left on odd rows.
+
+  We can get away with a single array (holding one row's worth of errors)
+  by using it to store the current row's errors at pixel columns not yet
+  processed, but the next row's errors at columns already processed.  We
+  need only a few extra variables to hold the errors immediately around the
+  current column.  (If we are lucky, those variables are in registers, but
+  even if not, they're probably cheaper to access than array elements are.)
+
+  The fserrors[] array has (#columns + 2) entries; the extra entry at
+  each end saves us from special-casing the first and last pixels.
+  Each entry is three values long, one value for each color component.
+
+  Note: on a wide image, we might not have enough room in a PC's near data
+  segment to hold the error array; so it is allocated with alloc_large. }
+
+
+{$ifdef BITS_IN_JSAMPLE_IS_8}
+type
+  FSERROR = INT16;              { 16 bits should be enough }
+  LOCFSERROR = int;             { use 'int' for calculation temps }
+{$else}
+type
+  FSERROR = INT32;              { may need more than 16 bits }
+  LOCFSERROR = INT32;           { be sure calculation temps are big enough }
+{$endif}
+type                            { Nomssi }
+  RGB_FSERROR_PTR = ^RGB_FSERROR;
+  RGB_FSERROR = packed record
+    r,g,b : FSERROR;
+  end;
+  LOCRGB_FSERROR = packed record
+    r,g,b : LOCFSERROR;
+  end;
+
+type
+  FSERROR_PTR = ^FSERROR;
+  jFSError = 0..(MaxInt div SIZEOF(RGB_FSERROR))-1;
+  FS_ERROR_FIELD = array[jFSError] of RGB_FSERROR;
+  FS_ERROR_FIELD_PTR = ^FS_ERROR_FIELD;{far}
+                                { pointer to error array (in FAR storage!) }
+
+type
+  error_limit_array = array[-MAXJSAMPLE..MAXJSAMPLE] of int;
+  { table for clamping the applied error }
+  error_limit_ptr = ^error_limit_array;
+
+{ Private subobject }
+type
+  my_cquantize_ptr = ^my_cquantizer;
+  my_cquantizer = record
+    pub : jpeg_color_quantizer; { public fields }
+
+    { Space for the eventually created colormap is stashed here }
+    sv_colormap : JSAMPARRAY;   { colormap allocated at init time }
+    desired : int;              { desired # of colors = size of colormap }
+
+    { Variables for accumulating image statistics }
+    histogram : hist3d;         { pointer to the histogram }
+
+    needs_zeroed : boolean;     { TRUE if next pass must zero histogram }
+
+    { Variables for Floyd-Steinberg dithering }
+    fserrors : FS_ERROR_FIELD_PTR;        { accumulated errors }
+    on_odd_row : boolean;       { flag to remember which row we are on }
+    error_limiter : error_limit_ptr; { table for clamping the applied error }
+  end;
+
+
+
+{ Prescan some rows of pixels.
+  In this module the prescan simply updates the histogram, which has been
+  initialized to zeroes by start_pass.
+  An output_buf parameter is required by the method signature, but no data
+  is actually output (in fact the buffer controller is probably passing a
+  NIL pointer). }
+
+{METHODDEF}
+procedure prescan_quantize (cinfo : j_decompress_ptr;
+                            input_buf : JSAMPARRAY;
+                            output_buf : JSAMPARRAY;
+                            num_rows : int); far;
+var
+  cquantize : my_cquantize_ptr;
+  {register} ptr : RGBptr;
+  {register} histp : histptr;
+  {register} histogram : hist3d;
+  row : int;
+  col : JDIMENSION;
+  width : JDIMENSION;
+begin
+  cquantize := my_cquantize_ptr(cinfo^.cquantize);
+  histogram := cquantize^.histogram;
+  width := cinfo^.output_width;
+
+  for row := 0 to pred(num_rows) do
+  begin
+    ptr := RGBptr(input_buf^[row]);
+    for col := pred(width) downto 0 do
+    begin
+      { get pixel value and index into the histogram }
+      histp := @(histogram^[GETJSAMPLE(ptr^.r) shr C0_SHIFT]^
+                           [GETJSAMPLE(ptr^.g) shr C1_SHIFT]
+                           [GETJSAMPLE(ptr^.b) shr C2_SHIFT]);
+      { increment, check for overflow and undo increment if so. }
+      Inc(histp^);
+      if (histp^ <= 0) then
+        Dec(histp^);
+      Inc(ptr);
+    end;
+  end;
+end;
+
+{ Next we have the really interesting routines: selection of a colormap
+  given the completed histogram.
+  These routines work with a list of "boxes", each representing a rectangular
+  subset of the input color space (to histogram precision). }
+
+type
+  box = record
+  { The bounds of the box (inclusive); expressed as histogram indexes }
+    c0min, c0max : int;
+    c1min, c1max : int;
+    c2min, c2max : int;
+    { The volume (actually 2-norm) of the box }
+    volume : INT32;
+    { The number of nonzero histogram cells within this box }
+    colorcount : long;
+  end;
+
+type
+  jBoxList = 0..(MaxInt div SizeOf(box))-1;
+  box_field = array[jBoxlist] of box;
+  boxlistptr = ^box_field;
+  boxptr = ^box;
+
+{LOCAL}
+function find_biggest_color_pop (boxlist : boxlistptr; numboxes : int) : boxptr;
+{ Find the splittable box with the largest color population }
+{ Returns NIL if no splittable boxes remain }
+var
+  boxp : boxptr ; {register}
+  i : int;        {register}
+  maxc : long;    {register}
+  which : boxptr;
+begin
+  which := NIL;
+  boxp := @(boxlist^[0]);
+  maxc := 0;
+  for i := 0 to pred(numboxes) do
+  begin
+    if (boxp^.colorcount > maxc) and (boxp^.volume > 0) then
+    begin
+      which := boxp;
+      maxc := boxp^.colorcount;
+    end;
+    Inc(boxp);
+  end;
+  find_biggest_color_pop := which;
+end;
+
+
+{LOCAL}
+function find_biggest_volume (boxlist : boxlistptr; numboxes : int) : boxptr;
+{ Find the splittable box with the largest (scaled) volume }
+{ Returns NULL if no splittable boxes remain }
+var
+  {register} boxp : boxptr;
+  {register} i : int;
+  {register} maxv : INT32;
+  which : boxptr;
+begin
+  maxv := 0;
+  which := NIL;
+  boxp := @(boxlist^[0]);
+  for i := 0 to pred(numboxes) do
+  begin
+    if (boxp^.volume > maxv) then
+    begin
+      which := boxp;
+      maxv := boxp^.volume;
+    end;
+    Inc(boxp);
+  end;
+  find_biggest_volume := which;
+end;
+
+
+{LOCAL}
+procedure update_box (cinfo : j_decompress_ptr; var boxp : box);
+label
+  have_c0min, have_c0max,
+  have_c1min, have_c1max,
+  have_c2min, have_c2max;
+{ Shrink the min/max bounds of a box to enclose only nonzero elements, }
+{ and recompute its volume and population }
+var
+  cquantize : my_cquantize_ptr;
+  histogram : hist3d;
+  histp : histptr;
+  c0,c1,c2 : int;
+  c0min,c0max,c1min,c1max,c2min,c2max : int;
+  dist0,dist1,dist2 : INT32;
+  ccount : long;
+begin
+  cquantize := my_cquantize_ptr(cinfo^.cquantize);
+  histogram := cquantize^.histogram;
+
+  c0min := boxp.c0min;  c0max := boxp.c0max;
+  c1min := boxp.c1min;  c1max := boxp.c1max;
+  c2min := boxp.c2min;  c2max := boxp.c2max;
+
+  if (c0max > c0min) then
+    for c0 := c0min to c0max do
+      for c1 := c1min to c1max do
+      begin
+        histp := @(histogram^[c0]^[c1][c2min]);
+        for c2 := c2min to c2max do
+        begin
+          if (histp^ <> 0) then
+          begin
+            c0min := c0;
+            boxp.c0min := c0min;
+            goto have_c0min;
+          end;
+          Inc(histp);
+        end;
+      end;
+ have_c0min:
+  if (c0max > c0min) then
+    for c0 := c0max downto c0min do
+      for c1 := c1min to c1max do
+      begin
+        histp := @(histogram^[c0]^[c1][c2min]);
+        for c2 := c2min to c2max do
+        begin
+          if ( histp^ <> 0) then
+          begin
+            c0max := c0;
+            boxp.c0max := c0;
+            goto have_c0max;
+          end;
+          Inc(histp);
+        end;
+      end;
+ have_c0max:
+  if (c1max > c1min) then
+    for c1 := c1min to c1max do
+      for c0 := c0min to c0max do
+      begin
+        histp := @(histogram^[c0]^[c1][c2min]);
+        for c2 := c2min to c2max do
+        begin
+          if (histp^ <> 0) then
+          begin
+            c1min := c1;
+            boxp.c1min := c1;
+            goto have_c1min;
+          end;
+          Inc(histp);
+        end;
+      end;
+ have_c1min:
+  if (c1max > c1min) then
+    for c1 := c1max downto c1min do
+      for c0 := c0min to c0max do
+      begin
+        histp := @(histogram^[c0]^[c1][c2min]);
+        for c2 := c2min to c2max do
+        begin
+          if (histp^ <> 0) then
+          begin
+            c1max := c1;
+            boxp.c1max := c1;
+            goto have_c1max;
+          end;
+          Inc(histp);
+        end;
+      end;
+ have_c1max:
+  if (c2max > c2min) then
+    for c2 := c2min to c2max do
+      for c0 := c0min to c0max do
+      begin
+        histp := @(histogram^[c0]^[c1min][c2]);
+        for c1 := c1min to c1max do
+        begin
+          if (histp^ <> 0) then
+          begin
+            c2min := c2;
+            boxp.c2min := c2min;
+            goto have_c2min;
+          end;
+          Inc(histp, HIST_C2_ELEMS);
+        end;
+      end;
+ have_c2min:
+  if (c2max > c2min) then
+    for c2 := c2max downto c2min do
+      for c0 := c0min to c0max do
+      begin
+        histp := @(histogram^[c0]^[c1min][c2]);
+        for c1 := c1min to c1max do
+        begin
+          if (histp^ <> 0) then
+          begin
+            c2max := c2;
+            bUnit RdBmp;
+
+{ rdbmp.c
+
+  Copyright (C) 1994-1996, Thomas G. Lane.
+  This file is part of the Independent JPEG Group's software.
+  For conditions of distribution and use, see the accompanying README file.
+
+  This file contains routines to read input images in Microsoft "BMP"
+  format (MS Windows 3.x, OS/2 1.x, and OS/2 2.x flavors).
+  Currently, only 8-bit and 24-bit images are supported, not 1-bit or
+  4-bit (feeding such low-depth images into JPEG would be silly anyway).
+  Also, we don't support RLE-compressed files.
+
+  These routines may need modification for non-Unix environments or
+  specialized applications.  As they stand, they assume input from
+  an ordinary stdio stream.  They further assume that reading begins
+  at the start of the file; start_input may need work if the
+  user interface has already read some data (e.g., to determine that
+  the file is indeed BMP format).
+
+  This code contributed by James Arthur Boucher. }
+
+interface
+
+{$I jconfig.inc}
+
+uses
+  jmorecfg,
+  jpeglib,
+  jinclude,
+  jdeferr,
+  jerror,
+  cdjpeg;               { Common decls for cjpeg/djpeg applications }
+
+{ The module selection routine for BMP format input. }
+
+{GLOBAL}
+function jinit_read_bmp (cinfo : j_compress_ptr) : cjpeg_source_ptr;
+
+implementation
+
+{ Macros to deal with unsigned chars as efficiently as compiler allows }
+
+{$define HAVE_UNSIGNED_CHAR}
+{$ifdef HAVE_UNSIGNED_CHAR}
+type
+  U_CHAR =  byte;
+  UCH = int;
+{$else} { !HAVE_UNSIGNED_CHAR }
+  {$ifdef CHAR_IS_UNSIGNED}
+  type
+    U_CHAR = char;
+    UCH = int;
+  {$else}
+  type
+    U_CHAR = char;
+    UCH = int(x) and $FF
+  {$endif}
+{$endif} { HAVE_UNSIGNED_CHAR }
+
+
+{ Private version of data source object }
+
+type
+  bmp_source_ptr = ^bmp_source_struct;
+  bmp_source_struct = record
+    pub : cjpeg_source_struct; { public fields }
+
+    cinfo : j_compress_ptr;             { back link saves passing separate parm }
+
+    colormap : JSAMPARRAY;              { BMP colormap (converted to my format) }
+
+    whole_image : jvirt_sarray_ptr;     { Needed to reverse row order }
+    source_row : JDIMENSION;    { Current source row number }
+    row_width : JDIMENSION;             { Physical width of scanlines in file }
+
+    bits_per_pixel : int;               { remembers 8- or 24-bit format }
+  end; { bmp_source_struct }
+
+
+{LOCAL}
+function read_byte (sinfo : bmp_source_ptr) : int;
+{ Read next byte from BMP file }
+var
+  {register} infile : FILEptr;
+  {register} c : byte;
+begin
+  infile := sinfo^.pub.input_file;
+  if JFREAD(infile, @c, 1) <> size_t(1) then
+    ERREXIT(j_common_ptr(sinfo^.cinfo), JERR_INPUT_EOF);
+  read_byte  := c;
+end;
+
+
+{LOCAL}
+procedure read_colormap (sinfo : bmp_source_ptr;
+                         cmaplen : int;
+                         mapentrysize : int);
+{ Read the colormap from a BMP file }
+var
+  i : int;
+begin
+  case (mapentrysize) of
+  3:{ BGR format (occurs in OS/2 files) }
+    for i := 0 to pred(cmaplen) do
+    begin
+      sinfo^.colormap^[2]^[i] := JSAMPLE (read_byte(sinfo));
+      sinfo^.colormap^[1]^[i] := JSAMPLE (read_byte(sinfo));
+      sinfo^.colormap^[0]^[i] := JSAMPLE (read_byte(sinfo));
+    end;
+  4:{ BGR0 format (occurs in MS Windows files) }
+    for i := 0 to pred(cmaplen) do
+    begin
+      sinfo^.colormap^[2]^[i] := JSAMPLE (read_byte(sinfo));
+      sinfo^.colormap^[1]^[i] := JSAMPLE (read_byte(sinfo));
+      sinfo^.colormap^[0]^[i] := JSAMPLE (read_byte(sinfo));
+      {void} read_byte(sinfo);
+    end;
+  else
+    ERREXIT(j_common_ptr(sinfo^.cinfo), JERR_BMP_BADCMAP);
+  end;
+end;
+
+
+{ Read one row of pixels.
+  The image has been read into the whole_image array, but is otherwise
+  unprocessed.  We must read it out in top-to-bottom row order, and if
+  it is an 8-bit image, we must expand colormapped pixels to 24bit format. }
+
+{METHODDEF}
+function  get_8bit_row (cinfo : j_compress_ptr;
+                        sinfo : cjpeg_source_ptr) : JDIMENSION; far;
+{ This version is for reading 8-bit colormap indexes }
+var
+  source : bmp_source_ptr;
+  {register} colormap : JSAMPARRAY;
+  image_ptr : JSAMPARRAY;
+  {register} t : int;
+  {register} inptr, outptr : JSAMPLE_PTR;
+  {register} col : JDIMENSION;
+begin
+  source := bmp_source_ptr (sinfo);
+  colormap := source^.colormap;
+  { Fetch next row from virtual array }
+  Dec(source^.source_row);
+  image_ptr := cinfo^.mem^.access_virt_sarray(
+     j_common_ptr (cinfo), source^.whole_image,
+     source^.source_row, JDIMENSION (1), FALSE);
+
+  { Expand the colormap indexes to real data }
+  inptr := JSAMPLE_PTR(image_ptr^[0]);
+  outptr := JSAMPLE_PTR(source^.pub.buffer^[0]);
+  for col := pred(cinfo^.image_width) downto 0 do
+  begin
+    t := GETJSAMPLE(inptr^);
+    Inc(inptr);
+    outptr^ := colormap^[0]^[t];       { can omit GETJSAMPLE() safely }
+    Inc(outptr);
+    outptr^ := colormap^[1]^[t];
+    Inc(outptr);
+    outptr^ := colormap^[2]^[t];
+    Inc(outptr);
+  end;
+
+  get_8bit_row  := 1;
+end;
+
+
+{METHODDEF}
+function get_24bit_row (cinfo : j_compress_ptr;
+                        sinfo : cjpeg_source_ptr) : JDIMENSION; far;
+{ This version is for reading 24-bit pixels }
+var
+  source : bmp_source_ptr;
+  image_ptr : JSAMPARRAY;
+  {register} inptr : JSAMPLE_PTR;
+  {register} outptr : JSAMPROW;
+  {register} col : JDIMENSION;
+begin
+  source := bmp_source_ptr (sinfo);
+  { Fetch next row from virtual array }
+  Dec(source^.source_row);
+  image_ptr := cinfo^.mem^.access_virt_sarray (
+     j_common_ptr (cinfo), source^.whole_image,
+     source^.source_row, JDIMENSION (1), FALSE);
+
+  { Transfer data.  Note source values are in BGR order
+    (even though Microsoft's own documents say the opposite). }
+
+  inptr := JSAMPLE_PTR(image_ptr^[0]);
+  outptr := source^.pub.buffer^[0];
+  for col := pred(cinfo^.image_width) downto 0 do
+  begin
+    outptr^[2] := inptr^;       { can omit GETJSAMPLE() safely }
+    Inc(inptr);
+    outptr^[1] := inptr^;
+    Inc(inptr);
+    outptr^[0] := inptr^;
+    Inc(inptr);
+    Inc(JSAMPLE_PTR(outptr), 3);
+  end;
+
+  get_24bit_row := 1;
+end;
+
+
+{ This method loads the image into whole_image during the first call on
+  get_pixel_rows.  The get_pixel_rows pointer is then adjusted to call
+  get_8bit_row or get_24bit_row on subsequent calls. }
+
+{METHODDEF}
+function preload_image (cinfo : j_compress_ptr;
+                        sinfo : cjpeg_source_ptr) : JDIMENSION; far;
+var
+  source : bmp_source_ptr;
+  {register} infile : FILEptr;
+  {$IFDEF Original}
+  {register} c : int;
+  {$ENDIF}
+  {register} out_ptr : JSAMPLE_PTR;
+  image_ptr : JSAMPARRAY;
+  row : JDIMENSION;
+  {$IFDEF Original}
+  col : JDIMENSION;
+  {$ENDIF}
+  progress : cd_progress_ptr;
+begin
+  source := bmp_source_ptr (sinfo);
+  infile := source^.pub.input_file;
+  progress := cd_progress_ptr (cinfo^.progress);
+
+  { Read the data into a virtual array in input-file row order. }
+  for row := 0 to pred(cinfo^.image_height) do
+  begin
+    if (progress <> NIL) then
+    begin
+      progress^.pub.pass_counter := long (row);
+      progress^.pub.pass_limit := long (cinfo^.image_height);
+      progress^.pub.progress_monitor (j_common_ptr (cinfo));
+    end;
+    image_ptr := cinfo^.mem^.access_virt_sarray (
+       j_common_ptr (cinfo), source^.whole_image,
+       row, JDIMENSION (1), TRUE);
+    out_ptr := JSAMPLE_PTR(image_ptr^[0]);
+    {$IFDEF Original}
+    for col := pred(source^.row_width) downto 0 do
+    begin
+      { inline copy of read_byte() for speed }
+      c := getc(infile);
+      if (c = EOF) then
+        ERREXIT(j_common_ptr(cinfo), JERR_INPUT_EOF);
+      out_ptr^ := JSAMPLE (c);
+      Inc(out_ptr);
+    end;
+    {$ELSE}
+    if JFREAD(infile, out_ptr, source^.row_width) <>
+      size_t(source^.row_width) then
+        ERREXIT(j_common_ptr(cinfo), JERR_INPUT_EOF);
+    {$ENDIF}
+  end;
+  if (progress <> NIL) then
+    Inc(progress^.completed_extra_passes);
+
+  { Set up to read from the virtual array in top-to-bottom order }
+  case (source^.bits_per_pixel) of
+   8: source^.pub.get_pixel_rows := get_8bit_row;
+  24: source^.pub.get_pixel_rows := get_24bit_row;
+  else
+    ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADDEPTH);
+  end;
+  source^.source_row := cinfo^.image_height;
+
+  { And read the first row }
+  preload_image := source^.pub.get_pixel_rows (cinfo, sinfo);
+end;
+
+
+{ Read the file header; return image size and component count. }
+
+{METHODDEF}
+procedure start_input_bmp (cinfo : j_compress_ptr;
+                           sinfo : cjpeg_source_ptr); far;
+var
+  source : bmp_source_ptr;
+
+  bmpfileheader : packed array[0..14-1] of U_CHAR;
+  bmpinfoheader : packed array[0..64-1] of U_CHAR;
+
+
+  bfOffBits : INT32 ;
+  headerSize : INT32;
+  biWidth : INT32;              { initialize to avoid compiler warning }
+  biHeight : INT32;
+  biPlanes : uInt;
+  biCompression : INT32;
+  biXPelsPerMeter,biYPelsPerMeter : INT32;
+  biClrUsed : INT32;
+  mapentrysize : int;
+  bPad : INT32;
+  row_width : JDIMENSION;
+var
+  progress : cd_progress_ptr;
+begin
+  source := bmp_source_ptr (sinfo);
+  biWidth := 0;                 { initialize to avoid compiler warning }
+  biHeight := 0;
+  biClrUsed := 0;
+  mapentrysize := 0;            { 0 indicates no colormap }
+
+  { Read and verify the bitmap file header }
+  if JFREAD(source^.pub.input_file, @bmpfileheader, 14) <> size_t (14) then
+    ERREXIT(j_common_ptr(cinfo), JERR_INPUT_EOF);
+
+  { GET_2B(bmpfileheader, 0) }
+  if (uInt(UCH(bmpfileheader[0]) +
+     (uInt(UCH(bmpfileheader[0+1])) shl 8)) <> $4D42) then { 'BM' }
+    ERREXIT(j_common_ptr(cinfo), JERR_BMP_NOT);
+
+  bfOffBits := {INT32 ( GET_4B(bmpfileheader,10) );}
+               INT32( INT32(UCH(bmpfileheader[10])) +
+                    ((INT32(UCH(bmpfileheader[10+1])) shl 8)) +
+                    ((INT32(UCH(bmpfileheader[10+2])) shl 16)) +
+                    ((INT32(UCH(bmpfileheader[10+3])) shl 24)));
+
+  { We ignore the remaining fileheader fields }
+
+  { The infoheader might be 12 bytes (OS/2 1.x), 40 bytes (Windows),
+    or 64 bytes (OS/2 2.x).  Check the first 4 bytes to find out which. }
+
+  if JFREAD(source^.pub.input_file, @bmpinfoheader, 4) <> size_t(4) then
+    ERREXIT(j_common_ptr(cinfo), JERR_INPUT_EOF);
+  headerSize := {INT32 (GET_4B(bmpinfoheader,0));}
+                INT32( INT32(UCH(bmpinfoheader[0])) +
+                     ((INT32(UCH(bmpinfoheader[0+1])) shl 8)) +
+                     ((INT32(UCH(bmpinfoheader[0+2])) shl 16)) +
+                     ((INT32(UCH(bmpinfoheader[0+3])) shl 24)));
+
+  if (headerSize < 12) or (headerSize > 64) then
+    ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADHEADER);
+
+  if JFREAD(source^.pub.input_file,@bmpinfoheader[4],headerSize-4) <>
+     size_t (headerSize-4) then
+    ERREXIT(j_common_ptr(cinfo), JERR_INPUT_EOF);
+
+  case int(headerSize) of
+  12:begin
+      { Decode OS/2 1.x header (Microsoft calls this a BITMAPCOREHEADER) }
+
+      biWidth := {INT32 (GET_2B(bmpinfoheader,4));}
+                 INT32( uInt(UCH(bmpinfoheader[4])) +
+                       (uInt(UCH(bmpinfoheader[4+1])) shl 8) );
+
+      biHeight := {INT32 (GET_2B(bmpinfoheader,6));}
+                  INT32( uInt(UCH(bmpinfoheader[6])) +
+                        (uInt(UCH(bmpinfoheader[6+1])) shl 8) );
+
+      biPlanes := {GET_2B(bmpinfoheader,8);}
+                  uInt(UCH(bmpinfoheader[8])) +
+                  (uInt(UCH(bmpinfoheader[8+1])) shl 8);
+
+      source^.bits_per_pixel := {int (GET_2B(bmpinfoheader,10));}
+                                int( uInt(UCH(bmpinfoheader[10])) +
+                                    (uInt(UCH(bmpinfoheader[10+1])) shl 8));
+
+      case (source^.bits_per_pixel) of
+      8: begin                    { colormapped image }
+           mapentrysize := 3;         { OS/2 uses RGBTRIPLE colormap }
+           TRACEMS2(j_common_ptr(cinfo), 1, JTRC_BMP_OS2_MAPPED, int (biWidth), int(biHeight));
+         end;
+      24:                       { RGB image }
+        TRACEMS2(j_common_ptr(cinfo), 1, JTRC_BMP_OS2, int (biWidth), int(biHeight));
+      else
+        ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADDEPTH);
+      end;
+      if (biPlanes <> 1) then
+        ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADPLANES);
+    end;
+  40,
+  64:begin
+      { Decode Windows 3.x header (Microsoft calls this a BITMAPINFOHEADER) }
+      { or OS/2 2.x header, which has additional fields that we ignore }
+
+      biWidth := {GET_4B(bmpinfoheader,4);}
+                 ( INT32(UCH(bmpinfoheader[4])) +
+                 ((INT32(UCH(bmpinfoheader[4+1])) shl 8)) +
+                 ((INT32(UCH(bmpinfoheader[4+2])) shl 16)) +
+                 ((INT32(UCH(bmpinfoheader[4+3])) shl 24)));
+      biHeight := {GET_4B(bmpinfoheader,8);}
+                  ( INT32(UCH(bmpinfoheader[8])) +
+                  ((INT32(UCH(bmpinfoheader[8+1])) shl 8)) +
+                  ((INT32(UCH(bmpinfoheader[8+2])) shl 16)) +
+                  ((INT32(UCH(bmpinfoheader[8+3])) shl 24)));
+
+      biPlanes := {GET_2B(bmpinfoheader,12);}
+                  ( uInt(UCH(bmpinfoheader[12])) +
+                   (uInt(UCH(bmpinfoheader[12+1])) shl 8) );
+
+      source^.bits_per_pixel := {int (GET_2B(bmpinfoheader,14));}
+                                int( uInt(UCH(bmpinfoheader[14])) +
+                                   ( uInt(UCH(bmpinfoheader[14+1])) shl 8) );
+
+      biCompression := {GET_4B(bmpinfoheader,16);}
+                       ( INT32(UCH(bmpinfoheader[16])) +
+                       ((INT32(UCH(bmpinfoheader[16+1])) shl 8)) +
+                       ((INT32(UCH(bmpinfoheader[16+2])) shl 16)) +
+                       ((INT32(UCH(bmpinfoheader[16+3])) shl 24)));
+
+      biXPelsPerMeter := {GET_4B(bmpinfoheader,24);}
+                         ( INT32(UCH(bmpinfoheader[24])) +
+                         ((INT32(UCH(bmpinfoheader[24+1])) shl 8)) +
+                         ((INT32(UCH(bmpinfoheader[24+2])) shl 16)) +
+                         ((INT32(UCH(bmpinfoheader[24+3])) shl 24)));
+
+      biYPelsPerMeter := {GET_4B(bmpinfoheader,28);}
+                         ( INT32(UCH(bmpinfoheader[28])) +
+                         ((INT32(UCH(bmpinfoheader[28+1])) shl 8)) +
+                         ((INT32(UCH(bmpinfoheader[28+2])) shl 16)) +
+                         ((INT32(UCH(bmpinfoheader[28+3])) shl 24)));
+
+      biClrUsed := {GET_4B(bmpinfoheader,32);}
+                   ( INT32(UCH(bmpinfoheader[32])) +
+                   ((INT32(UCH(bmpinfoheader[32+1])) shl 8)) +
+                   ((INT32(UCH(bmpinfoheader[32+2])) shl 16)) +
+                   ((INT32(UCH(bmpinfoheader[32+3])) shl 24)));
+
+      { biSizeImage, biClrImportant fields are ignored }
+
+      case (source^.bits_per_pixel) of
+      8: begin                     { colormapped image }
+           mapentrysize := 4;           { Windows uses RGBQUAD colormap }
+           TRACEMS2(j_common_ptr(cinfo), 1, JTRC_BMP_MAPPED, int (biWidth), int (biHeight));
+         end;
+      24:                          { RGB image }
+         TRACEMS2(j_common_ptr(cinfo), 1, JTRC_BMP, int (biWidth), int (biHeight));
+      else
+        ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADDEPTH);
+      end;
+      if (biPlanes <> 1) then
+        ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADPLANES);
+      if (biCompression <> 0) then
+        ERREXIT(j_common_ptr(cinfo), JERR_BMP_COMPRESSED);
+
+      if (biXPelsPerMeter > 0) and (biYPelsPerMeter > 0) then
+      begin
+        { Set JFIF density parameters from the BMP data }
+        cinfo^.X_density := UINT16 (biXPelsPerMeter div 100); { 100 cm per meter }
+        cinfo^.Y_density := UINT16 (biYPelsPerMeter div 100);
+        cinfo^.density_unit := 2;       { dots/cm }
+      end;
+    end;
+  else
+    ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADHEADER);
+  end;
+
+  { Compute distance to bitmap data --- will adjust for colormap below }
+  bPad := bfOffBits - (headerSize + 14);
+
+  { Read the colormap, if any }
+  if (mapentrysize > 0) then
+  begin
+    if (biClrUsed <= 0) then
+      biClrUsed := 256       { assume it's 256 }
+    else
+      if (biClrUsed > 256) then
+        ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADCMAP);
+    { Allocate space to store the colormap }
+    source^.colormap := cinfo^.mem^.alloc_sarray(
+       j_common_ptr (cinfo), JPOOL_IMAGE,
+       JDIMENSION (biClrUsed), JDIMENSION (3));
+    { and read it from the file }
+    read_colormap(source, int (biClrUsed), mapentrysize);
+    { account for size of colormap }
+    Dec(bPad, biClrUsed * mapentrysize);
+  end;
+
+  { Skip any remaining pad bytes }
+  if (bPad < 0) then       { incorrect bfOffBits value? }
+    ERREXIT(j_common_ptr(cinfo), JERR_BMP_BADHEADER);
+
+  while (bPad > 0) do
+  begin
+    Dec(bPad);
+    {void} read_byte(source);
+  end;
+
+  { Compute row width in file, including padding to 4-byte boundary }
+  if (source^.bits_per_pixel = 24) then
+    row_width := JDIMENSION (biWidth * 3)
+  else
+    row_width := JDIMENSION (biWidth);
+  while ((row_width and 3) <> 0) do
+    Inc(row_width);
+  source^.row_width := row_width;
+
+  { Allocate space for inversion array, prepare for preload pass }
+  source^.whole_image := cinfo^.mem^.request_virt_sarray(
+     j_common_ptr (cinfo), JPOOL_IMAGE, FALSE,
+     row_width, JDIMENSION (biHeight), JDIMENSION (1));
+  source^.pub.get_pixel_rows := preload_image;
+  if (cinfo^.progress <> NIL) then
+  begin
+    progress := cd_progress_ptr (cinfo^.progress);
+    Inc(progress^.total_extra_passes); { count file input as separate pass }
+  end;
+
+  { Allocate one-row buffer for returned data }
+  source^.pub.buffer := cinfo^.mem^.alloc_sarray(
+     j_common_ptr (cinfo), JPOOL_IMAGE,
+     JDIMENSION (biWidth * 3), JDIMENSION (1) );
+  source^.pub.buffer_height := 1;
+
+  cinfo^.in_color_space := JCS_RGB;
+  cinfo^.input_components := 3;
+  cinfo^.data_precision := 8;
+  cinfo^.image_width := JDIMENSION (biWidth);
+  cinfo^.image_height := JDIMENSION (biHeight);
+end;
+
+
+{ Finish up at the end of the file. }
+
+{METHODDEF}
+procedure finish_input_bmp (cinfo : j_compress_ptr;
+                            sinfo : cjpeg_source_ptr); far;
+begin
+  { no work }
+end;
+
+
+{ The module selection routine for BMP format input. }
+
+{GLOBAL}
+function jinit_read_bmp (cinfo : j_compress_ptr) : cjpeg_source_ptr;
+var
+  source : bmp_source_ptr;
+begin
+  { Create module interface object }
+  source := bmp_source_ptr (
+      cinfo^.mem^.alloc_small (j_common_ptr(cinfo), JPOOL_IMAGE,
+                               SIZEOF(bmp_source_struct)) );
+  source^.cinfo := cinfo;       { make back link for subroutines }
+  { Fill in method ptrs, except get_pixel_rows which start_input sets }
+  source^.pub.start_input := start_input_bmp;
+  source^.pub.finish_input := finish_input_bmp;
+
+  jinit_read_bmp  := cjpeg_source_ptr (source);
+end;
+
+end.
+EG‹^‰]ü‹^‰]ø‰Ã‹v‰Ç‹Uô‹Mü‹&‰‰ƒÆƒÇIuğƒ}ø tf‹&f‰f‰ƒÆƒÇ]ì‰ßÿMğuÍÉÂ ´&    U‰åƒì‹}f‹fÀ‹GP÷e‹u‹VÁeEG‹^‰]ü‹^‰]ø‰Ã‹v‰ÇX‹Müó¥‹Møóf¥Ã‰ßJuîÉÂ ´&    ´&    U‰åƒì‹u&f‹fØ&‹FP÷eÁeE&F‰Æ‰Ã‹}&‹W&‹G‰Eü&‹G‰Eø&‹X‹Müó¥‹Møóf¥Ã‰ŞJuîÉÂ t& U‰åƒì0‹}‹u‹E;G
+  F
+ƒøŒ  ‹];_ø   ^ƒûŒì   SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EÜÁeüÁeìf‹F‰EĞ‹Eô÷eĞEü‹vÆ‹G‰EÔ‹Eè÷eÔEì‹Ç‰û‰uØ1Ò‹Eä¹   ÷ñ‰Eä‰Uà‹Mäó¥‹Màóf¥]Ô‰ß‹UĞUØ‹uØÿMÜuâÉÂ t& U‰åƒì8‹}‹u‹E;G
+  F
+ƒøŒ  ‹];_  ^ƒûŒû   SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EÜÁeüÁeìfŒØfÀ&f&‹F‰EÈ‹Eô÷eÈEü&‹vÆ&‹G‰EÌ‹Eè÷eÌEì&‹Ç‡ş‰û‰uĞ1Ò‹Eä¹   ÷ñ‰Eä‰Uà‹Mäó¥‹Màóf¥]È‰ß‹UÌUĞ‹uĞÿMÜuâÉÂ t& U‰åƒì‹}‹u‹F‰Eø‹G‰Eüf‹F
+‰Eô‹G‰Eğ÷eÁeEEü‰Ç‰Ã‹V‹uø‹Môf‹f;Et&f‰ƒÆƒÇIuê]ğ‰ßJußÉÂ ´&    t& U‰åƒì‹}‹u‹G‰Eø‹F‰Eüf&‹G
+‰Eğ&‹F‰Eì÷eÁeEEü‰Æ‰Ã&‹W‹}ø‹Mğf‹f;Et&f‰ƒÆƒÇIuê]ì‰ŞJußÉÂ ¶    U‰åƒì,‹E‹};G
+  ‹uF
+ƒøŒ   ‹];_ô   ^ƒûŒè   SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹F‰EÔ‹Eô÷eÔEü‹vÆ‹G‰EØ‹Eè÷eØEì‹Ç‰û‰uÜ‹Mäf‹f;Et&f‰ƒÆƒÇIuê]Ø‰ß‹UÔUÜ‹uÜÿMàuÔÉÂ ´&    U‰åƒì4‹u‹}‹E;F
+  G
+ƒøŒ  ‹];^÷   _ƒûŒë   SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;F
+‹G
+‰Eøë	‹F
++E‰EøX;F‹G‰Eğë	‹F+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeì‹Eô‹_‰]Ô÷ã‹EüÇ‹Eè‹^‰]Ğ÷ãf‹‹vEìÆfÛ‰û‰uÌ‹Mäf‹f;Et&f‰ƒÆƒÇIuê]Ô‰ß‹UĞUÌ‹uÌÿMàuÔÉÂ t& U‰åƒì$‹}f‹G‰Eè÷eÁeEG‰Ç‰Eô‹u‹N
+‰Mğ‹N‰Mì‹v‹Mğf‹f‰ÂfÁè*e€ü }0äˆeçÀè*E< }0ÀˆEæ€â*U€ú }0ÒˆUå&f‹f‰ÚfÁëÀë€â}ç]æUå€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…|ÿÿÿ‹EèEô‹}ôÿMì…gÿÿÿÉÂ ´&    t& U‰åƒì4‹u‹}‹E;G
+ƒ  F
+ƒøŒw  ‹];_k  ^ƒûŒ_  SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹N‹W‰MÜ‰UØ‹Eô÷eÜEü‹vÆ‹‹Eè÷eØEìÇ‰}Ğ‰uÔ‹Mäf‹f‰ÂfÁè*e€ü }0äˆeÏÀè*E< }0ÀˆEÎ€â*U€ú }0ÒˆUÍ&f‹f‰ÚfÁëÀë€â}Ï]ÎUÍ€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…|ÿÿÿ‹EØEĞ‹}Ğ‹UÜUÔ‹uÔÿMà…^ÿÿÿÉÂ U‰åƒì‹u‹}f‹F
+‰Eô‹F‰Eğ‹G‰Eø÷eÁeEG‰Ç‰Eè‹v‹Môf‹f;E„t   f‰ÂfÁè*e€ü }0äˆeçÀè*E< }0ÀˆEæ€â*U€ú }0ÒˆUå&f‹f‰ÚfÁëÀë€â}ç]æUå€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…rÿÿÿ‹EøEè‹}èÿMğ…]ÿÿÿÉÂ U‰åƒì4‹}‹u‹E;G
+  F
+ƒøŒ  ‹];_u  ^ƒûŒi  SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹F‰EØ‹G‰EÜ‹Eô÷eØEü‹vÆ‹‹Eè÷eÜEìÇ‰}Ğ‰uÔ‹Mäf‹f;E„t   f‰ÂfÁè*e€ü }0äˆeÏÀè*E< }0ÀˆEÎ€â*U€ú }0ÒˆUÍ&f‹f‰ÚfÁëÀë€â}Ï]ÎUÍ€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…rÿÿÿ‹EÜEĞ‹}Ğ‹UØUÔ‹uÔÿMà…TÿÿÿÉÂ ´&    U‰åƒì$‹u‹}f‹F
+‰Eì‹F‰Eø‹G‰Eè÷eÁeEG‰Ç‰Eğ‹v‹Mìf‹f‰ÂfÁèˆeçÀèˆEæ€âˆUå&f‹f‰ÚfÁëÀë€â*}€ÿ }0ÿ*]€û }0Û*U€ú }0Ò}ç]æUå€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…{ÿÿÿ‹EèEğ‹}ğÿMø…fÿÿÿÉÂ ´&    v U‰åƒì4‹u‹}‹E;G
+„  F
+ƒøŒx  ‹];_l  ^ƒûŒ`  SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹F‰EØ‹Eô÷eØEü‹vÆ‹G‰EÜ‹Eè÷eÜEì‹Ç‰}Ğ‰uÔ‹Mäf‹f‰ÂfÁèˆeÏÀèˆEÎ€âˆUÍ&f‹f‰ÚfÁëÀë€â*}€ÿ }0ÿ*]€û }0Û*U€ú }0Ò}Ï]ÎUÍ€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…{ÿÿÿ‹EÜEĞ‹}Ğ‹UØUÔ‹uÔÿMà…]ÿÿÿÉÂ U‰åƒì‹u‹}f‹F
+‰Eø‹F‰Eü‹G‰Eô÷eÁeEG‰Ç‰Eè‹v‹Møf‹f;E„u   f‰ÂfÁèˆeçÀèˆEæ€âˆUå&f‹f‰ÚfÁëÀë€â*}€ÿ }0ÿ*]€û }0Û*U€ú }0Ò}ç]æUå€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…qÿÿÿ‹EôEè‹}èÿMü…\ÿÿÿÉÂ U‰åƒì4‹u‹}‹E;G
+  F
+ƒøŒ‚  ‹];_v  ^ƒûŒj  SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹F‰EØ‹G‰EÜ‹Eô÷eØEü‹vÆ‹Eè÷eÜEì‹Ç‰}Ğ‰uÔ‹Mäf‹f;E„u   f‰ÂfÁèˆeÏÀèˆEÎ€âˆUÍ&f‹f‰ÚfÁëÀë€â*}€ÿ }0ÿ*]€û }0Û*U€ú }0Ò}Ï]ÎUÍ€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇI…qÿÿÿ‹EÜEĞ‹}Ğ‹UØUÔ‹uÔÿMà…SÿÿÿÉÂ ¶    U‰åƒì‹u‹}f‹G‰Eğ‹F‰Eø‹F
+‰Eü‹G
+÷eEÁàG‰Ç‰Eè‹v‹Müf‹f‰ÂfÁèˆeçÀèˆEæ€âˆUå&f‹f‰ÚfÁëÀë€â}ç]æUå€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇIu‹EğEè‹}èÿMø…ˆÿÿÿÉÂ ´&    v U‰åƒì4‹u‹}‹E;G
+b  F
+ƒøŒV  ‹];_J  ^ƒûŒ>  SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹F‰EØ‹Eô÷eØEü‹vÆ‹G‰EÜ‹Eè÷eÜEì‹Ç‰}Ğ‰uÔ‹Mäf‹f‰ÂfÁèˆeÏÀèˆEÎ€âˆUÍ&f‹f‰ÚfÁëÀë€â}Ï]ÎUÍ€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇIu‹EÜEĞ‹}Ğ‹UØUÔ‹uÔÿMà…ÿÿÿÉÂ ‰öU‰åƒì‹u‹}f‹G‰Eô‹F‰Eü‹F
+‰Eø‹G
+÷eEÁàG‰Ç‰Eì‹v‹Møf‹f;EtWf‰ÂfÁèˆeëÀèˆEê€âˆUé&f‹f‰ÚfÁëÀë€â}ë]êUé€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇIu—‹EôEì‹}ìÿMü…‚ÿÿÿÉÂ t& U‰åƒì4‹u‹}‹E;G
+h  F
+ƒøŒ\  ‹];_P  ^ƒûŒD  SP‹Eƒø }÷Ø‰EüÇEì    ë
+ÇEü    ‰Eì‹Eƒø }÷Ø‰EôÇEè    ë
+ÇEô    ‰EèX;G
+‹F
+‰Eøë	‹G
++E‰EøX;G‹F‰Eğë	‹G+E‰Eğ‹Eø+Eü‰Eä‹Eğ+Eô‰EàÁeüÁeìf‹F‰EØ‹Eô÷eØEü‹vÆ‹G‰EÜ‹Eè÷eÜEì‹Ç‰}Ğ‰uÔ‹Mäf‹f;EtWf‰ÂfÁèˆeÏÀèˆEÎ€âˆUÍ&f‹f‰ÚfÁëÀë€â}Ï]ÎUÍ€ÿ r·€û@r³?€ú r²ˆøfÁà ØfÁà Ğ&f‰ƒÆƒÇIu—‹EÜEĞ‹}Ğ‹UØUÔ‹uÔÿMà…yÿÿÿÉÂ ´&    t& U‰åƒì‹}‹OÁéf‹‹u‹vf‹f‰ÂfÁèˆeÿÀèˆEş€âˆUı&f‹f‰ÂfÁèÀè€â:eÿvşEÿsşMÿ:Eşv*Eş<r€Eşë(şEşë#:Eşsfÿuş(Eş€}şr
+fEş€mşëfEşşMş:UıvşEısşMıŠEÿfÁàf¶UşfÁâUıfĞf‰ƒÆƒÇI…\ÿÿÿÉÂ ´&    t& U‰åƒì$ƒìfh  ÿuÿu‹EPèäSÿÿƒÄ‹E‹x‰}ü‹E‹x‰}ø‹E‹x
+WÛ$_‹}WÛ$_Şùİ]ÜƒìİEÜƒì
+Û<$èfj  Û-dÈ ŞÉƒì
+Û<$èãc  ƒÄf‰EêƒìİEÜƒì
+Û<$èËc  ƒÄ‰Eô‹E‹xWÛ$_‹}WÛ$_Şùİ]ÜƒìİEÜƒì
+Û<$èj  Û-dÈ ŞÉƒì
+Û<$è‰c  ƒÄf‰EèƒìİEÜƒì
+Û<$èqc  ƒÄ‰Eğ‹E‹x‰}ìfŒØfÀ‹}ü‹uø1ÉÁeôfÇEä  ‹]f1Ò‹]f¥uôfUêrƒîKuïMğf‹EèfEäsA‹uø‰È÷eìÆÿMuÌÉÂ ´&    ¶    U‰åƒì‹E‹@;E|ë	‹E‹x‰}‹E‹@&;E|ë	‹E‹x&‰}ÿuÿu‹EPèfÿÿf‰Eşƒì‹EP‹EP‹EP·}şfWèA4ÿÿƒÄÉÂ ´&    v U‰åƒìhƒìfh  ÿuÿu}ÔWè$RÿÿƒÄ‹=nÈ ‰}Ä‹=rÈ ‰}È‹E‹x
+WÛ$_Û-vÈ Şé‹EÁàPÛ$_Şùİ]¼‹E‹xWÛ$_Û-vÈ Şé‹EÁàPÛ$_Şùİ]´‹EH‰EœÇE¬    ‹E¬;Eœ  ‹=€È ‰}Ì‹=„È ‰}Ğ‹EH‰E˜ÇE°    ‹E°;E˜µ  }©W}ªW}«WƒìİEÄƒì
+Û<$è³a  ƒÄPƒìİEÌƒì
+Û<$èa  ƒÄP‹EPè‘şÿÿ}¦W}§W}¨WƒìİEÄİE´ŞÁƒì
+Û<$èoa  ƒÄPƒìİEÌƒì
+Û<$èZa  ƒÄP‹EPèMşÿÿ}£W}¤W}¥WƒìİEÄƒì
+Û<$è0a  ƒÄPƒìİEÌİE¼ŞÁƒì
+Û<$èa  ƒÄP‹EPè	şÿÿ} W}¡W}¢WƒìİEÄİE´ŞÁƒì
+Û<$èç`  ƒÄPƒìİEÌİE¼ŞÁƒì
+Û<$èÍ`  ƒÄP‹EPèÀıÿÿİE¼Û-ˆÈ ŞÉİEÌŞÁİ]Ìƒì¶E©¶U¦Â¶E£Ğ¶U Â…ÒyƒÂÁúfR¶Eª¶U§Â¶E¤Ğ¶U¡Â…ÒyƒÂÁúfR¶E«¶U¨Â¶E¥Ğ¶U¢Â…ÒyƒÂÁúfRèÿ^ÿÿfPÿu¬ÿu°}ÔWèÎcÿÿƒÄ‹E°;E˜}ÿE°éKşÿÿİE´Û-ˆÈ ŞÉİEÄŞÁİ]Ä‹E¬;Eœ}ÿE¬éüıÿÿ‹E8uÔü¹
+   ó¥f¥ÉÂ ‰öU‰å‹u‹N‹vÁéf‹ˆÃ€ãfÁèÀèeE]€ü~´ë€ü }0ä<?~°?ë< }0À€û~³ë€û }0ÛÀàfÁà Øf‰ƒÆâ©ÉÂ
+ ¶    U‰å‹u‹N‹vÁéf‹f;EtOˆÃ€ãfÁèÀèeE]€ü~´ë€ü }0ä<?~°?ë< }0À€û~³ë€û }0ÛÀàfÁà Øf‰ƒÆI…ÿÿÿÉÂ ´&    t& U‰å‹u‹N‹vÁéf‹ˆÃ€ãfÁèÀèeE]€ü~´<?~°?€û~³ÀàfÁà Øf‰ƒÆâÃÉÂ
+ U‰å‹u‹N‹vÁéf‹f;Et5ˆÃ€ãfÁèÀèeE]€ü~´<?~°?€û~³ÀàfÁà Øf‰ƒÆâ½ÉÂ ´&    v U‰å‹u‹N‹vÁéf‹ˆÃ€ãfÁèÀèeE]€ü }0ä< }0À€û }0ÛÀàfÁà Øf‰ƒÆâÃÉÂ
+ U‰å‹u‹N‹vÁéf‹f;Et5ˆÃ€ãfÁèÀè*e*E*]€ü }0ä< }0À€û }0ÛÀàfÁà Øf‰ƒÆâ½ÉÂ ´&    v U‰å‹u‹F‹v‹}‹fŒÛfÃ€=”9  t"1Ò¹   ÷ñ‰Áo&ƒÆƒÇâñw‰Ñóªë1Ò¹   ÷ñ‰Áó¥‰Ñó¤ÉÂ ¶    U‰åƒì‹u‹}‹N‹‹vÎƒîÁéf‹&f‰ƒÇƒîIuğÉÂ ´&    ´&    U‰åƒì,ƒìfh  ‹Eÿp
+‹Eÿp}ÔWè~LÿÿƒÄ}ÔW‹EPèÿÿÿ‹E8uÔü¹
+   ó¥f¥ÉÂ ´&    U‰åƒì‹u‹}‹F‰Eü‹V
+‹N‰Ë‹F‹‹vÆ+uüV‰Ùf‹&f‰ƒÇ+uüIuğ^ƒÆJuæÉÂ ´&    v U‰åƒì,ƒìfh  ‹Eÿp
+‹Eÿp}ÔWèŞKÿÿƒÄ}ÔW‹EPè~ÿÿÿ‹E8uÔü¹
+   ó¥f¥ÉÂ ´&    U‰åƒì‹u‹}‹F‰Eü‹V
+‹N‰Ë‹‹vÆƒîV‰Ùf‹&f‰ƒÇuüIuğ^ƒîJuæÉÂ ´&    ¶    U‰åƒì,ƒìfh  ‹Eÿp
+‹Eÿp}ÔWè>KÿÿƒÄ}ÔW‹EPè~ÿÿÿ‹E8uÔü¹
+   ó¥f¥ÉÂ ´&    U‰åƒì‹u‹}‹F‰Eü‹N
+‹V‰Ë‹‹vÆƒîV‰Ùf‹&f‰ƒÇƒîIuğ^uüJuæÉÂ ´&    ¶    U‰åƒì,ƒìfh  ‹Eÿp‹Eÿp
+}ÔWèJÿÿƒÄ}ÔW‹EPè~ÿÿÿ‹E8uÔü¹
+   ó¥f¥ÉÂ ´&    U‰åƒì‹u‹}‹F‰Eü‹N
+‹V‰Ë‹F‹‹vÆ+uüV‰Ùf‹&f‰ƒÇƒÆIuğ^+uüJuæÉÂ ´&    v U‰åƒì,ƒìfh  ‹Eÿp‹Eÿp
+}ÔWèşIÿÿƒÄ}ÔW‹EPè~ÿÿÿ‹E8uÔü¹
+   ó¥f¥ÉÂ ´&    U‰åì€   ‹EÁè¯EÁèÁàPÛ$_Ùúİ]ø‹E· ‰E˜‹E‹x‰}”‹E‹x‰}‹E· ‰EŒ‹E‹x‰}ˆ‹E‹x‰}„‹E‹x
+‰}€‹E ƒÀ-=i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$èrY  ‰Ã‰ÑƒÄZXÃÑ‰]Ì‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$è5Y  ‰Ã‰ÑƒÄZX)ØÊ‰EÈ‹E ‡   =i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$è×X  ‰Ã‰ÑƒÄZXÃÑ‰]Ô‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èšX  ‰Ã‰ÑƒÄZX)ØÊ‰EĞ‹E á   =i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$è<X  ‰Ã‰ÑƒÄZXÃÑ‰]Ä‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èÿW  ‰Ã‰ÑƒÄZX)ØÊ‰EÀ‹E ;  =i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$è¡W  ‰Ã‰ÑƒÄZXÃÑ‰]¼‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èdW  ‰Ã‰ÑƒÄZX)ØÊ‰E¸‹EÔ‰Eğ‹EĞ‰EìÇE´    ‹Eğ;EÌ|tÇEàÿÿÿÿëÇEà   ‹Eì;EÈ|tÇEÜÿÿÿÿëÇEÜ   ‹Eğ+EÌPèQW  ‰Eè‹Eì+EÈPèBW  ‰Eä‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹Eè;Eäé•   ‹EèÁè÷Ø‰EØëu‹EäEØ‹EàEğ‹EØ…Àë6‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹EÜEì‹Eè)EØ‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹Eğ;EÌ…ÿÿÿë é   ‹EäÁè÷Ø‰EØëu‹EèEØ‹EÜEì‹EØ…Àë6‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹EàEğ‹Eä)EØ‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹Eì;EÈ…ÿÿÿë ‹E‹xWÛ$_‹}´WÛ$_Şùİ]øƒìİEøƒì
+Û<$èÚ[  Û-dÈ ŞÉƒì
+Û<$èWU  ƒÄf‰E¢ƒìİEøƒì
+Û<$è?U  ƒÄ¤ÂÁà‰E¬‹E‹x&WÛ$_ÿuÀÿuÄÿuĞÿuÔè&|ÿÿPÛ$_Şùİ]øƒìİEøƒì
+Û<$èk[  Û-dÈ ŞÉƒì
+Û<$èèT  ƒÄf‰E ƒìİEøƒì
+Û<$èĞT  ƒÄ‰E¨‹EÔ;EÄ|tÇEàÿÿÿÿëÇEà   ‹EĞ;EÀ|tÇEÜÿÿÿÿëÇEÜ   ‹EÔ+EÄPèÚT  ‰Eè‹EĞ+EÀPèËT  ‰EäÇEô    fE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f‰}¬f‹E¢fEsƒÇA;M´r¶‹E¨Eôf‹E fEœsÿEô‹Eè;Eäé'  ‹EèÁè÷Ø‰EØé  ‹EäEØ‹EàEÔ‹EØ…Àé|   fE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f‰}¬f‹E¢fEsƒÇA;M´r¶‹E¨Eôf‹E fEœsÿEô‹EÜEĞ‹Eè)EØfE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f‰}¬f‹E¢fEsƒÇA;M´r¶‹E¨Eôf‹E fEœsÿEô‹EÔ;EÄ…ğşÿÿë é"  ‹EäÁè÷Ø‰EØé  ‹EèEØ‹EÜEĞ‹EØ…Àé|   fE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f‰}¬f‹E¢fEsƒÇA;M´r¶‹E¨Eôf‹E fEœsÿEô‹EàEÔ‹Eä)EØfE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f‰}¬f‹E¢fEsƒÇA;M´r¶‹E¨Eôf‹E fEœsÿEô‹EĞ;EÀ…ğşÿÿë ÉÂ ´&    U‰åì€   ‹EÁè¯EÁèÁàPÛ$_Ùúİ]ø‹E· ‰E˜‹E‹x‰}”‹E‹x‰}‹E· ‰EŒ‹E‹x‰}ˆ‹E‹x‰}„‹E‹x
+‰}€‹E ƒÀ-=i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$èòP  ‰Ã‰ÑƒÄZXÃÑ‰]Ì‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èµP  ‰Ã‰ÑƒÄZX)ØÊ‰EÈ‹E ‡   =i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$èWP  ‰Ã‰ÑƒÄZXÃÑ‰]Ô‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èP  ‰Ã‰ÑƒÄZX)ØÊ‰EĞ‹E á   =i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$è¼O  ‰Ã‰ÑƒÄZXÃÑ‰]Ä‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èO  ‰Ã‰ÑƒÄZX)ØÊ‰EÀ‹E ;  =i  |-h  ƒø h  ‰E¤‹E1Ò©   €t÷ÒPRƒì‹E¤İÅğG İEøŞÉƒì
+Û<$è!O  ‰Ã‰ÑƒÄZXÃÑ‰]¼‹E1Ò©   €t÷ÒPRƒì‹E¤İÅ˜9 İEøŞÉƒì
+Û<$èäN  ‰Ã‰ÑƒÄZX)ØÊ‰E¸‹EÔ‰Eğ‹EĞ‰EìÇE´    ‹Eğ;EÌ|tÇEàÿÿÿÿëÇEà   ‹Eì;EÈ|tÇEÜÿÿÿÿëÇEÜ   ‹Eğ+EÌPèÑN  ‰Eè‹Eì+EÈPèÂN  ‰Eä‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹Eè;Eäé•   ‹EèÁè÷Ø‰EØëu‹EäEØ‹EàEğ‹EØ…Àë6‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹EÜEì‹Eè)EØ‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹Eğ;EÌ…ÿÿÿë é   ‹EäÁè÷Ø‰EØëu‹EèEØ‹EÜEì‹EØ…Àë6‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹EàEğ‹Eä)EØ‹E´Áà‹Uğ+UÔ‰…Tâ ‹E´Áà@‹Uì+UĞ‰…Tâ ÿE´‹Eì;EÈ…ÿÿÿë ‹E‹xWÛ$_‹}´WÛ$_Şùİ]øƒìİEøƒì
+Û<$èZS  Û-dÈ ŞÉƒì
+Û<$è×L  ƒÄf‰E¢ƒìİEøƒì
+Û<$è¿L  ƒÄ¤ÂÁà‰E¬‹E‹x&WÛ$_ÿuÀÿuÄÿuĞÿuÔè¦sÿÿPÛ$_Şùİ]øƒìİEøƒì
+Û<$èëR  Û-dÈ ŞÉƒì
+Û<$èhL  ƒÄf‰E ƒìİEøƒì
+Û<$èPL  ƒÄ‰E¨‹EÔ;EÄ|tÇEàÿÿÿÿëÇEà   ‹EĞ;EÀ|tÇEÜÿÿÿÿëÇEÜ   ‹EÔ+EÄPèZL  ‰Eè‹EĞ+EÀPèKL  ‰EäÇEô    fE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f;U$tf‰}¬f‹E¢fEsƒÇA;M´r°‹E¨Eôf‹E fEœsÿEô‹Eè;Eäé3  ‹EèÁè÷Ø‰EØé  ‹EäEØ‹EàEÔ‹EØ…Àé‚   fE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f;U$tf‰}¬f‹E¢fEsƒÇA;M´r°‹E¨Eôf‹E fEœsÿEô‹EÜEĞ‹Eè)EØfE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f;U$tf‰}¬f‹E¢fEsƒÇA;M´r°‹E¨Eôf‹E fEœsÿEô‹EÔ;EÄ…äşÿÿë é.  ‹EäÁè÷Ø‰EØé  ‹EèEØ‹EÜEĞ‹EØ…Àé‚   fE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f;U$tf‰}¬f‹E¢fEsƒÇA;M´r°‹E¨Eôf‹E fEœsÿEô‹EàEÔ‹Eä)EØfE˜‹}”‹E÷eôÇ1É5Tâ ‰ÈÁàÆ‹]Ô‹VUĞ‹E€÷âØÁàf]Œ‹uˆÆ&f‹f;U$tf‰}¬f‹E¢fEsƒÇA;M´r°‹E¨Eôf‹E fEœsÿEô‹EĞ;EÀ…äşÿÿë ÉÂ ´&    ‰öU‰å æ4 „Àté3  Ææ4 ‹Ef¶@f£V4 ‹E·@…ÀyƒÀÁøf£R4 ‹E·@…ÀyƒÀÁøf£T4 ¿V4 ƒà…Àuë¿R4 £o4 ¿T4 £s4 ¿V4 ƒà…Àtë¿R4 £w4 ¿T4 £{4  å4 „Àtë¿R4 £_4 ¿T4 £c4 €=Q4  uë]‹EŠPˆZ4 ¾Z4 fX4 ¿X4 ;[4 ëf‹=[4 f‰=X4 ë"¿X4 ‹[4 ÷Ú9Âë¡[4 ÷Øf£X4 €} uëÿÕ4 Ææ4  ÉÂ ´&    U‰å P4 „Àtëƒìfh h¬  è‘şÿÿƒÄÉÃ´&    t& U‰åÉÃ´&    t& fPfŒÀfØƒ=° u`f¡È fàèŸÿÿÿaXfP‹&‰G*&fG. XÏÃ´&    v U‰åÉÃ´&    t& U‰å¡° …Àtëéê   ¿R4 ;_4 të¿T4 ;c4 tëéÃ   Ææ4 €=å4  ué   ¡c4 +k4 P¡_4 +g4 Phª4 h$4 ÿİ4 ¿T4 +k4 P¿R4 +g4 Phª4 h$4 ÿá4 ƒì·=N4 fW¿T4 +k4 P¿R4 +g4 Ph€4 h$4 ÿÙ4 ƒÄ¿R4 £_4 ¿T4 £c4 Ææ4  ÉÃU‰å å4 „ÀtëësÆæ4 ¿T4 +k4 P¿R4 +g4 Phª4 h$4 èÍÿÿƒì·=N4 fW¿T4 +k4 P¿R4 +g4 Ph€4 h$4 èwÏÿÿƒÄÆæ4  ÉÃ´&    t& U‰åì  ½ ÿÿÿWÿuhÿ   ès@  ƒ=°  uë4€=å4  uëÆ…ÿşÿÿè1  ëÆ…ÿşÿÿ h€4 è6ÿÿhª4 è”6ÿÿ€½ ÿÿÿ tëOƒìfh  jjh€4 èÄ4ÿÿƒÄhŒ  ¡‚4 Phü¼ èJ  Çg4    Çk4    fÇN4  øé{   ½ ÿÿÿWh’È èIC  tëLƒìfh  jjh€4 è`4ÿÿƒÄhŒ  ¡‚4 Phˆ¾ è¨I  Çg4    Çk4    fÇN4  øëh€4 ½ ÿÿÿWèyÿÿfÇN4   ƒìfh  ÿ54 ÿ5Š4 hª4 èò3ÿÿƒÄƒ=°  uë€½ÿşÿÿ uëè„  ÉÂ U‰åì8  ½ ÿÿÿWÿuhÿ   è?  Ç…èşÿÿ    ƒì½ÌşÿÿWfh3 è&8  ƒÄ‹…èşÿÿ=ÿÿ  uëGèÏ\ÿÿ=H ‰½Èşÿÿhğº ÿµÈşÿÿj èñ>  ÿµÈşÿÿèf?  hÉ èÌ?  ƒìfh  è@J  ƒÄŠ…Üşÿÿ¢4 ÆQ4  Ç…èşÿÿ   ƒì½ÌşÿÿWfh3 è7  ƒÄ·…èşÿÿ=MW  të-·…äşÿÿPè~C  ÀuëÆQ4 hè  è§  fÇX4   Ç…èşÿÿ   ƒì½ÌşÿÿWfh3 èA7  ƒÄ‹Ef‹xf‰=R4 ‹Ef‹x"f‰=T4 ‹Eÿp&‹Eÿpj j è­  Ç…èşÿÿ   ¿R4 Áà‰…äşÿÿ¿T4 Áà‰…àşÿÿƒì½ÌşÿÿWfUnit RdColMap;
+
+{ rdcolmap.c ; Copyright (C) 1994-1996, Thomas G. Lane. }
+
+{ This file implements djpeg's "-map file" switch.  It reads a source image
+  and constructs a colormap to be supplied to the JPEG decompressor.
+
+  Currently, these file formats are supported for the map file:
+    GIF: the contents of the GIF's global colormap are used.
+    PPM (either text or raw flavor): the entire file is read and
+       each unique pixel value is entered in the map.
+  Note that reading a large PPM file will be horrendously slow.
+  Typically, a PPM-format map file should contain just one pixel
+  of each desired color.  Such a file can be extracted from an
+  ordinary image PPM file with ppmtomap(1).
+
+  Rescaling a PPM that has a maxval unequal to MAXJSAMPLE is not
+  currently implemented. }
+
+interface
+
+{$I jconfig.inc}
+
+uses
+  jmorecfg,
+  cdjpeg,               { Common decls for cjpeg/djpeg applications }
+  jdeferr,
+  jerror,
+  jpeglib;
+
+{ Main entry point from djpeg.c.
+   Input: opened input file (from file name argument on command line).
+   Output: colormap and actual_number_of_colors fields are set in cinfo. }
+
+{GLOBAL}
+{$ifdef QUANT_2PASS_SUPPORTED}
+procedure read_color_map (cinfo : j_decompress_ptr; var infile : FILE);
+{$endif} { QUANT_2PASS_SUPPORTED }
+
+implementation
+
+{$ifdef QUANT_2PASS_SUPPORTED}
+{ otherwise can't quantize to supplied map }
+
+{ Portions of this code are based on the PBMPLUS library, which is:
+*
+* Copyright (C) 1988 by Jef Poskanzer.
+*
+* Permission to use, copy, modify, and distribute this software and its
+* documentation for any purpose and without fee is hereby granted, provided
+* that the above copyright notice appear in all copies and that both that
+* copyright notice and this permission notice appear in supporting
+* documentation.  This software is provided "as is" without express or
+* implied warranty.
+}
+
+
+{ Add a (potentially) new color to the color map. }
+
+{LOCAL}
+procedure add_map_entry (cinfo : j_decompress_ptr;
+                         R : int; G : int; B : int);
+var
+  colormap0 : JSAMPROW;
+  colormap1 : JSAMPROW;
+  colormap2 : JSAMPROW;
+  ncolors : int;
+  index : int;
+begin
+  colormap0 := cinfo^.colormap^[0];
+  colormap1 := cinfo^.colormap^[1];
+  colormap2 := cinfo^.colormap^[2];
+  ncolors := cinfo^.actual_number_of_colors;
+
+  { Check for duplicate color. }
+  for index := 0 to pred(ncolors) do
+  begin
+    if (GETJSAMPLE(colormap0^[index]) = R) and
+       (GETJSAMPLE(colormap1^[index]) = G) and
+       (GETJSAMPLE(colormap2^[index]) = B) then
+      exit;                     { color is already in map }
+  end;
+
+  { Check for map overflow. }
+  if (ncolors >= (MAXJSAMPLE+1)) then
+    ERREXIT1(j_common_ptr(cinfo), JERR_QUANT_MANY_COLORS, (MAXJSAMPLE+1));
+
+  { OK, add color to map. }
+  colormap0^[ncolors] := JSAMPLE (R);
+  colormap1^[ncolors] := JSAMPLE (G);
+  colormap2^[ncolors] := JSAMPLE (B);
+  Inc(cinfo^.actual_number_of_colors);
+end;
+
+
+{ Extract color map from a GIF file. }
+
+{LOCAL}
+procedure read_gif_map (cinfo : j_decompress_ptr; var infile : file);
+var
+  header : packed array[1..13-1] of byte;
+  i, colormaplen : int;
+var
+  color : RGBtype;
+var
+  count : int;
+begin
+  { Initial 'G' has already been read by read_color_map }
+  { Read the rest of the GIF header and logical screen descriptor }
+  blockread(infile, header, 13-1, count);
+  if (count <> 13-1) then
+    ERREXIT(j_common_ptr(cinfo), JERR_BAD_CMAP_FILE);
+
+  { Verify GIF Header }
+  if (header[1] <> byte('I')) or (header[2] <> byte('F')) then
+    ERREXIT(j_common_ptr(cinfo), JERR_BAD_CMAP_FILE);
+
+  { There must be a global color map. }
+  if ((header[10] and $80) = 0) then
+    ERREXIT(j_common_ptr(cinfo), JERR_BAD_CMAP_FILE);
+
+  { OK, fetch it. }
+  colormaplen := 2 shl (header[10] and $07);
+
+  for i := 0 to pred(colormaplen) do
+  begin
+    blockread(infile, color, 3, count);
+    if (count <> 3) then
+      ERREXIT(j_common_ptr(cinfo), JERR_BAD_CMAP_FILE);
+    add_map_entry(cinfo,
+                  color.R shl (BITS_IN_JSAMPLE-8),
+                  color.G shl (BITS_IN_JSAMPLE-8),
+                  color.B shl (BITS_IN_JSAMPLE-8));
+  end;
+end;
+
+
+{$IFDEF PPM}
+{ Support routines for reading PPM }
+
+
+{LOCAL}
+function pbm_getc (var infile : FILE) : int;
+{ Read next char, skipping over any comments }
+{ A comment/newline sequence is returned as a newline }
+var
+  {register} ch : int;
+begin
+  ch := getc(infile);
+  if (ch = '#') then
+  begin
+    repeat
+      ch := getc(infile);
+    until not (ch <> '\n') and not EOF(infile);
+  end;
+  pbm_get := ch;
+end;
+
+
+{LOCAL}
+function read_pbm_integer (cinfo : j_decompress_ptr;
+                           var infile : FILE) : uInt;
+{ Read an unsigned decimal integer from the PPM file }
+{ Swallows one trailing character after the integer }
+{ Note that on a 16-bit-int machine, only values up to 64k can be read. }
+{ This should not be a problem in practice. }
+var
+  {register} ch : int;
+  {register} val : uInt;
+begin
+  { Skip any leading whitespace }
+  repeat
+    ch := pbm_getc(infile);
+    if EOF(infile) then
+      ERREXIT(j_common_ptr(cinfo), JERR_BAD_CMAP_FILE);
+  until (ch <> ' ') and (ch <> '\t') and (ch <> '\n') and (ch <> '\r');
+
+  if (ch < '0') or (ch > '9') then
+    ERREXIT(j_common_ptr(cinfo), JERR_BAD_CMAP_FILE);
+
+  val := ch - '0';
+  ch := pbm_getc(infile);
+  while (ch >= '0') and (ch <= '9') do
+  begin
+    val := val * 10;
+    Inc(val, ch - '0');
+    ch := pbm_getc(infile);
+  end;
+  read_pbm_integer := val;
+end;
+
+
+{ Extract color map from a PPM file. }
+

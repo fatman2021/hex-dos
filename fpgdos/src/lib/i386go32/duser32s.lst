@@ -1,0 +1,1413 @@
+In archive duser32s.lib:
+
+Accel.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ACCEL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x48 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindResourceA@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadResource@8
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hInstance
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _LoadAcceleratorsA@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000034 _TranslateAcceleratorA@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003f _CopyAcceleratorTableA@12
+
+
+
+AtExit.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ATEXIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x58 nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _doatexit
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pAtExit
+
+
+
+Bitmap.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 BITMAP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xc4 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindResourceA@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadResource@8
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDC@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ReleaseDC@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateDIBitmap@24
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hInstance
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __CreateBitmapFromMemory@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _LoadBitmapA@8
+
+
+
+Char2OEM.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Char2oem.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x11c nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenW@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000010 _CharToOemBuffA@12
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _CharToOemA@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000068 _CharToOemBuffW@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _CharToOemW@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a4 _OemToCharBuffA@12
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc _OemToCharA@8
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc _OemToCharBuffW@12
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _OemToCharW@8
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 xstr
+
+
+
+CharNext.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CharNext.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x68 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CharNextA@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000010 _CharNextExA@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000020 _CharNextW@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000034 _CharPrevA@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _CharPrevExA@16
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _CharPrevW@8
+
+
+
+CharUpp.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CharUpp.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x188 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CharUpperBuffW@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000008 _CharUpperBuffA@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000034 _CharUpperA@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _CharUpperW@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000090 _CharLowerBuffW@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000098 _CharLowerBuffA@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _CharLowerA@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f0 _CharLowerW@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _IsCharLowerA@4
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000138 _IsCharLowerW@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000154 _IsCharUpperA@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000016c _IsCharUpperW@4
+
+
+
+ClipBoar.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CLIPBOAR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2e0 nreloc 42 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xc nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__AddAtomA@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__DeleteAtom@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindAtomA@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetAtomNameA@12
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GlobalAlloc@8
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GlobalFree@4
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HXLoadVDD@0
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HXDispatch@0
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _OpenClipboard@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _CloseClipboard@0
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000094 _EmptyClipboard@0
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000109 _IsClipboardFormatAvailable@4
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000015c _GetClipboardData@4
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000019c _SetClipboardData@8
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e4 _GetOpenClipboardWindow@0
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e4 _GetClipboardOwner@0
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001ec _CountClipboardFormats@0
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000200 _EnumClipboardFormats@4
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000244 _GetClipboardFormatNameA@12
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000268 _RegisterClipboardFormatA@4
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002bc _SetClipboardViewer@4
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002c8 _ChangeClipboardChain@8
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002d4 _GetPriorityClipboardFormat@8
+[ 32](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_hOwner
+[ 33](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 hVdd
+[ 34](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pList
+
+
+
+ConvWStr.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ConvWStr.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x58 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenW@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _ConvertAStrN@12
+
+
+
+cursor.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CURSOR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x418 nreloc 44 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xa nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x7 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindResourceA@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStdHandle@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadResource@8
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetConsoleMode@8
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetConsoleMode@8
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetSystemMetrics@4
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hInstance
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetVesaProcs@0
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc2@4
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 21](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnVesaMouseInit
+[ 22](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnVesaMouseExit
+[ 23](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hVesa32
+[ 24](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000008 _g_bMouse
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCursor@28
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000088 _DestroyCursor@4
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000098 _LoadCursorA@8
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000012c _LoadCursorW@8
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002cc _SetCursor@4
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000314 _ShowCursor@4
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000350 _GetCursor@0
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000358 _ClipCursor@4
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003bc _GetCursorPos@4
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003f4 _SetCursorPos@8
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x0000014c _DisableMouseInput@0
+[ 36](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0003
+[ 37](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000009 g_bInit
+[ 38](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x000001a4 __MouseExit@0
+[ 39](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_hCurrCursor
+[ 40](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_cntMouse
+
+
+
+DCStuff.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 DCStuff.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x4d4 nreloc 50 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x36 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x29 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FreeLibrary@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcAddress@8
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadLibraryA@4
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetClientRect@8
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SendMessageA@16
+[ 17](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateDCA@16
+[ 18](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__DeleteDC@4
+[ 19](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ExtTextOutA@32
+[ 20](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStockObject@4
+[ 21](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetTextExtentPoint32A@16
+[ 22](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__PatBlt@24
+[ 23](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SelectObject@8
+[ 24](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetSystemPaletteUse@8
+[ 25](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetViewportOrgEx@16
+[ 26](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetWindowOrgEx@16
+[ 27](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TextOutA@20
+[ 28](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 29](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 30](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetDCOrgEx@12
+[ 31](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_dwOldRealizePalette
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BeginPaint@8
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000004c _EndPaint@8
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000068 __ClearDCCache@0
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d4 _InitGfx@0
+[ 36](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fe _InitDC@0
+[ 37](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000164 _GetDC@4
+[ 38](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000230 _GetWindowDC@4
+[ 39](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000240 _ReleaseDC@8
+[ 40](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000029c _FillRect@12
+[ 41](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002e4 _DrawFocusRect@8
+[ 42](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002f0 _TabbedTextOutA@32
+[ 43](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000039c _DrawTextA@20
+[ 44](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000428 _GrayStringA@36
+[ 45](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000434 _UserRealizePalette@4
+[ 46](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000468 _WindowFromDC@4
+[ 47](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004bc _DrawIcon@16
+[ 48](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004c8 _DrawIconEx@36
+[ 49](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_dccache
+[ 50](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_hxlib
+[ 51](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000035 g_bInit
+[ 52](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0004
+[ 53](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000009 ??0005
+[ 54](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000f ??0006
+[ 55](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000098 _DeinitDC@0
+[ 56](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000021 ??0008
+
+
+
+DDE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 DDE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1b nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _FreeDDElParam@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000009 _PackDDElParam@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000012 _UnpackDDElParam@16
+
+
+
+Dlgbox.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Dlgbox.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x200 nreloc 17 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x42 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetWindowTextA@12
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MessageBoxA@16
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SendMessageA@16
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetWindowTextA@8
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wsprintfA
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wvsprintfA@12
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DialogBoxParamA@20
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _DialogBoxParamW@20
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000058 _DialogBoxIndirectParamA@20
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000088 _EndDialog@8
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000094 _CreateDialogParamA@20
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a0 _IsDialogMessageA@8
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ac _GetDlgItem@8
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b8 _GetDlgCtrlID@4
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _CheckDlgButton@12
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d0 _IsDlgButtonChecked@8
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc _GetDlgItemTextA@16
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000100 _SetDlgItemTextA@12
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _SetDlgItemTextW@12
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000013c _GetDlgItemInt@16
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000170 _SetDlgItemInt@16
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001c4 _SendDlgItemMessageA@20
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001ec _GetNextDlgTabItem@12
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001f8 _GetDialogBaseUnits@0
+[ 33](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+[ 34](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001a ??0002
+[ 35](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003c ??000F
+[ 36](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003f ??0010
+
+
+
+DispRes.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 dispres.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x328 nreloc 51 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xc nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x19 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpy@8
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDC@4
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _InvalidateRect@12
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ReleaseDC@8
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SendMessageA@16
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wsprintfA
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetDeviceCaps@8
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStockObject@4
+[ 16](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__PatBlt@24
+[ 17](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SelectObject@8
+[ 18](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hwndActive
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetVesaProcs@0
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[ 21](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 22](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ClearDCCache@0
+[ 23](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnEnumVesaModes
+[ 24](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnGetVesaMemoryBufferSize
+[ 25](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnGetVesaMode
+[ 26](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnGetVesaModeInfo
+[ 27](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnGetVesaStateBufferSize
+[ 28](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnRestoreVesaVideoMemory
+[ 29](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnRestoreVesaVideoState
+[ 30](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnSaveVesaVideoMemory
+[ 31](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnSaveVesaVideoState
+[ 32](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnSearchVesaMode
+[ 33](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnSetVesaMode
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _ChangeDisplaySettingsA@8
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000258 _EnumDisplaySettingsA@12
+[ 36](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002c8 _EnumDisplayDevicesA@16
+[ 37](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_dwVState
+[ 38](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_dwVMode
+[ 39](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_dwVMem
+[ 40](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x0000021d _mycb@12
+[ 41](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0005
+[ 42](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000c ??0006
+[ 43](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000014 ??0007
+
+
+
+EnumWind.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 EnumWind.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x13c nreloc 14 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_pWindows
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _EnumThreadWindows@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _EnumChildWindows@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000e4 _EnumWindows@8
+
+
+
+ExitWin.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 EXITWIN.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x9 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ExitWindowsEx@8
+
+
+
+HOTKEY.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 HOTKEY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x11c nreloc 14 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __IsHotKey@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000070 _RegisterHotKey@16
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _UnregisterHotKey@8
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pHotKeys
+
+
+
+ICON.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ICON.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xe4 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindResourceA@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadResource@8
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SizeofResource@8
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hInstance
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateIconIndirect@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CreateIcon@28
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _DestroyIcon@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _CreateIconFromResource@16
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _CreateIconFromResourceEx@28
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _LoadIconA@8
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000cc _CopyIcon@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _GetIconInfo@8
+
+
+
+IMAGE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 IMAGE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x11c nreloc 11 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CloseHandle@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateFileA@28
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ReadFile@20
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _LoadBitmapA@8
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _LoadCursorA@8
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __CreateBitmapFromMemory@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _LoadImageA@24
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000110 _CopyImage@20
+
+
+
+INIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 INIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x18 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .BASE$IU
+AUX scnlen 0x4 nreloc 1 nlnno 0
+[  8](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .BASE$XU
+AUX scnlen 0x4 nreloc 1 nlnno 0
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__DeleteCriticalSection@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__InitializeCriticalSection@4
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _InitUser@0
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _DeinitUser@0
+
+
+
+ISCHAR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 IsChar.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xa0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _IsCharAlphaA@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _IsCharAlphaW@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _IsCharAlphaNumericA@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _IsCharAlphaNumericW@4
+
+
+
+KEYBOARD.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 KEYBOARD.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3c8 nreloc 24 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4c nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x5 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetUserDefaultLCID@0
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wsprintfA
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetKeyTable@0
+[ 11](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_keypress
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000020 _g_keytoggle
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000100 _GetKeyState@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000130 _GetAsyncKeyState@4
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000140 _GetKeyboardState@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000178 _SetKeyboardState@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001bc _GetKeyboardType@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e4 _ToAscii@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000210 _ToAsciiEx@24
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000022c _ToUnicode@24
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000258 _MapVirtualKeyA@8
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000030c _MapVirtualKeyExA@12
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000320 _VkKeyScanExA@8
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000032c _VkKeyScanA@4
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000338 _OemKeyScan@4
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000350 _GetKeyboardLayout@4
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000364 _GetKeyboardLayoutList@8
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000388 _LoadKeyboardLayoutA@8
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000039c _GetKeyboardLayoutNameA@4
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003bc _GetKeyNameTextA@12
+[ 31](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 _vktable
+[ 32](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000040 g_vkflags
+[ 33](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0010
+
+
+
+LoadStrg.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 LoadStrg.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xd8 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindResourceA@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindResourceW@12
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadResource@8
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _LoadStringA@16
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000068 _LoadStringW@16
+
+
+
+Malloc.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MALLOC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x40 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalAlloc@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalFree@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000014 _malloc2@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 _free@4
+
+
+
+Menu.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MENU.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x290 nreloc 9 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpy@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_SysMenu
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateMenu@0
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c _CreatePopupMenu@0
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _DestroyMenu@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc _AppendMenuA@16
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _AppendMenuW@16
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000168 _InsertMenuA@20
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001b0 _DeleteMenu@12
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001d8 _ModifyMenuA@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e4 _LoadMenuA@8
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001f0 _EnableMenuItem@12
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001fc _CheckMenuItem@12
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000208 _GetSubMenu@8
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000214 _RemoveMenu@12
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000220 _GetMenuItemID@8
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000022c _GetMenuItemCount@4
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000238 _GetMenuState@12
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000244 _GetMenuStringA@20
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000250 _SetMenuDefaultItem@12
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000025c _SetMenuItemBitmaps@20
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000268 _GetMenuCheckMarkDimensions@0
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000026c _GetMenuItemInfoA@16
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000278 _SetMenuItemInfoA@16
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000284 _TrackPopupMenu@28
+
+
+
+Message.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Message.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x9c4 nreloc 104 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x1d nreloc 4 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .bss
+AUX scnlen 0x1c00 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__AddAtomA@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateEventA@16
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindAtomA@4
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStdHandle@4
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetTickCount@0
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ResetEvent@4
+[ 16](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetEvent@4
+[ 17](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetWaitableTimer@24
+[ 18](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WaitForSingleObject@8
+[ 19](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WaitForMultipleObjects@16
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetCursorPos@4
+[ 21](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _IsChild@8
+[ 22](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ScreenToClient@8
+[ 23](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ToAscii@20
+[ 24](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _WindowFromPoint@8
+[ 25](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ReadConsoleInputA@16
+[ 26](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hwndFocus
+[ 27](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hwndActive
+[ 28](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_pTimer
+[ 29](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 30](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_keypress
+[ 31](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_keytoggle
+[ 32](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_pWindows
+[ 33](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hwndCapture
+[ 34](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __IsHotKey@4
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc _PostMessageA@16
+[ 36](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000e8 _PostThreadMessageA@16
+[ 37](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000114 _SendMessageA@16
+[ 38](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000154 _PostQuitMessage@4
+[ 39](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000170 _DispatchMessageA@4
+[ 40](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000194 _TranslateMessage@4
+[ 41](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000604 _RemovePaintMsg@4
+[ 42](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000007ec _PeekMessageA@20
+[ 43](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000080c _GetMessageA@16
+[ 44](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000828 _MsgWaitForMultipleObjects@20
+[ 45](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000008b4 _InSendMessage@0
+[ 46](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000008b8 _WaitMessage@0
+[ 47](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000008d0 _GetMessageTime@0
+[ 48](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000008e8 _GetQueueStatus@4
+[ 49](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000008f4 _RegisterWindowMessageA@4
+[ 50](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000914 _WaitForInputIdle@8
+[ 51](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000920 _GetMessagePos@0
+[ 52](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000940 _keybd_event@16
+[ 53](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000994 _AttachThreadInput@12
+[ 54](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000009a0 _ReplyMessage@4
+[ 55](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000009ac _BroadcastSystemMessage@20
+[ 56](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000009b8 _GetLastInputInfo@4
+[ 57](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000009 g_Queue
+[ 58](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_bPauseExpected
+[ 59](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_dwOldButtonState
+[ 60](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_hConInp
+[ 61](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 _start_of_queue
+[ 62](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00001c00 _end_of_queue
+
+
+
+MessageW.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MESSAGEW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xa4 nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DispatchMessageA@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetMessageA@16
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PeekMessageA@20
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostMessageA@16
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostThreadMessageA@16
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RegisterWindowMessageA@4
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SendMessageA@16
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostMessageW@16
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _PostThreadMessageW@16
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _SendMessageW@16
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _DispatchMessageW@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000058 _PeekMessageW@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _GetMessageW@16
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000008c _RegisterWindowMessageW@4
+
+
+
+msgbeep.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 msgbeep.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x14 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__Beep@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MessageBeep@4
+
+
+
+msgbox.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 msgbox.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x328 nreloc 27 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x1 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x91 nreloc 16 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStdHandle@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlZeroMemory@8
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WriteFile@20
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BeginPaint@8
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateWindowExA@48
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DefWindowProcA@16
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DispatchMessageA@4
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _EndPaint@8
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetMessageA@16
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetWindowLongA@8
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostMessageA@16
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostQuitMessage@4
+[ 21](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RegisterClassA@4
+[ 22](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetFocus@4
+[ 23](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetWindowLongA@12
+[ 24](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _TabbedTextOutA@32
+[ 25](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStockObject@4
+[ 26](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetBkMode@8
+[ 27](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TextOutA@20
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000180 _MessageBoxA@16
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002f4 _MessageBoxExA@20
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000030c _MessageBoxIndirectA@4
+[ 31](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_bInit
+[ 32](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 szMsgBoxClass
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000000 _MsgBoxWndProc@16
+[ 34](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000065 _mbtypes
+[ 35](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000c keyOk
+[ 36](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000010 keyCancel
+[ 37](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000014 keyYes
+[ 38](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000019 keyNo
+[ 39](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001d szOk
+[ 40](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001f keysOk
+[ 41](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000023 szOkCancel
+[ 42](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000002f keysOkCancel
+[ 43](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000037 szYesNo
+[ 44](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000040 keysYesNo
+[ 45](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000048 szYesNoCancel
+[ 46](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000059 keysYesNoCancel
+
+
+
+msgboxw.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MSGBOXW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x38 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MessageBoxA@16
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MessageBoxW@16
+
+
+
+property.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Property.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetPropA@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _SetPropA@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _RemovePropA@8
+
+
+
+RECT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 RECT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1b8 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PtInRect@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 _SetRect@20
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000004c _SetRectEmpty@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000064 _IsRectEmpty@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _EqualRect@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a4 _CopyRect@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc _OffsetRect@12
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc _InflateRect@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _UnionRect@12
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000154 _IntersectRect@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001ac _InvertRect@8
+
+
+
+scrlwin.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SCRLWIN.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x80 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetClientRect@8
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDC@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ReleaseDC@8
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__BitBlt@36
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ScrollWindow@20
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _ScrollWindowEx@32
+
+
+
+SYSCLR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SYSCLR.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x54 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x10 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x50 nreloc 20 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateSolidBrush@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetSysColorBrush@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c _GetSysColor@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _SetSysColors@12
+[ 12](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 _brushtabptr
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 darkbrush
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 ltbrush
+
+
+
+system.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SYSTEM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x158 nreloc 20 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetNumberOfConsoleMouseButtons@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDC@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ReleaseDC@8
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetDeviceCaps@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_bMouse
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetSystemMetrics@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d0 _SystemParametersInfoA@16
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000138 _SystemParametersInfoW@16
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000150 _GetDoubleClickTime@0
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000024 _smetrics
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000074 __screen
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000074 __fullscreen
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000074 __maximized
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000ae __cursor
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000b4 __mousepresent
+[ 21](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000bc __mousebutton
+[ 22](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000128 _spi_tab
+[ 23](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000f6 _screensaveactive
+[ 24](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000100 _getworkarea
+
+
+
+timer.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 timer.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x14c nreloc 17 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CancelWaitableTimer@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CloseHandle@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateWaitableTimerA@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetWaitableTimer@24
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc2@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_pTimer
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetTimer@16
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _KillTimer@8
+
+
+
+UpdRgn.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 UpdRgn.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xf4 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostMessageA@16
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetRectRgn@20
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _InvalidateRect@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _ValidateRect@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _InvalidateRgn@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000078 _ValidateRgn@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _GetUpdateRgn@12
+
+
+
+VesaProc.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 VesaProc.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x61 nreloc 11 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x6c nreloc 13 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0xeb nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FreeLibrary@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcAddress@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadLibraryA@4
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hVesa32
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 _g_lpfnEnumVesaModes
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000000c _g_lpfnGetVesaMemoryBufferSize
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000014 _g_lpfnGetVesaMode
+[ 16](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000001c _g_lpfnGetVesaModeInfo
+[ 17](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000024 _g_lpfnGetVesaStateBufferSize
+[ 18](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000002c _g_lpfnRestoreVesaVideoMemory
+[ 19](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000034 _g_lpfnRestoreVesaVideoState
+[ 20](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000003c _g_lpfnSaveVesaVideoMemory
+[ 21](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000044 _g_lpfnSaveVesaVideoState
+[ 22](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000004c _g_lpfnSearchVesaMode
+[ 23](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000054 _g_lpfnSetVesaMode
+[ 24](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000005c _g_lpfnVesaMouseInit
+[ 25](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000064 _g_lpfnVesaMouseExit
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000d __GetVesaProcs@0
+[ 27](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000e4 ??000D
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000000 _unloadvesa@0
+[ 29](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 _proctable
+[ 30](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+[ 31](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000e ??0001
+[ 32](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000026 ??0002
+[ 33](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000032 ??0003
+[ 34](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000042 ??0004
+[ 35](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000059 ??0005
+[ 36](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000070 ??0006
+[ 37](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000086 ??0007
+[ 38](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000009a ??0008
+[ 39](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000ad ??0009
+[ 40](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000bc ??000A
+[ 41](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000c8 ??000B
+[ 42](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000d6 ??000C
+
+
+
+windows.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WINDOWS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x14ec nreloc 149 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x14 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__EnterCriticalSection@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindAtomA@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetAtomNameA@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCurrentProcessId@0
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCurrentThreadId@0
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetTickCount@0
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LeaveCriticalSection@4
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcmpi@8
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpy@8
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpyn@12
+[ 16](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CopyRect@8
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _FillRect@12
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDC@4
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetSystemMetrics@4
+[ 21](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _InvalidateRect@12
+[ 22](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _KillTimer@8
+[ 23](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PostMessageA@16
+[ 24](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ReleaseDC@8
+[ 25](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SendMessageA@16
+[ 26](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetCursor@4
+[ 27](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetRectEmpty@4
+[ 28](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__BitBlt@36
+[ 29](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateCompatibleBitmap@12
+[ 30](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateCompatibleDC@4
+[ 31](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__DeleteDC@4
+[ 32](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__DeleteObject@4
+[ 33](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetDeviceCaps@8
+[ 34](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetRegionData@12
+[ 35](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStockObject@4
+[ 36](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__PatBlt@24
+[ 37](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SelectObject@8
+[ 38](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetRectRgn@20
+[ 39](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc@4
+[ 40](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc2@4
+[ 41](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 42](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __FindClass@4
+[ 43](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_pTimer
+[ 44](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_csUser
+[ 45](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_SysMenu
+[ 46](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _InitGfx@0
+[ 47](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RemovePaintMsg@4
+[ 48](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hwndActive
+[ 49](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 _g_hwndFocus
+[ 50](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000000c _g_pWindows
+[ 51](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000008 _g_hwndCapture
+[ 52](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateWindowExA@48
+[ 53](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002d4 _DestroyWindow@4
+[ 54](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000043c _GetForegroundWindow@0
+[ 55](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000444 _SetForegroundWindow@4
+[ 56](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000454 _GetWindow@8
+[ 57](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000460 _GetShellWindow@0
+[ 58](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000460 _GetDesktopWindow@0
+[ 59](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000464 _GetTopWindow@4
+[ 60](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000470 _GetWindowTextA@12
+[ 61](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000049c _SetWindowTextA@8
+[ 62](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004dc _GetWindowTextLengthA@4
+[ 63](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004fc _GetSystemMenu@8
+[ 64](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000524 _GetMenu@4
+[ 65](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000540 _SetMenu@8
+[ 66](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000056c _GetParent@4
+[ 67](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000588 _SetParent@8
+[ 68](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005a8 _GetWindowThreadProcessId@8
+[ 69](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005d8 _IsChild@8
+[ 70](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000628 _IsIconic@4
+[ 71](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000634 _IsWindow@4
+[ 72](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000650 _IsWindowVisible@4
+[ 73](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000674 _IsWindowUnicode@4
+[ 74](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000680 _IsZoomed@4
+[ 75](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000006a0 _WindowFromPoint@8
+[ 76](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000730 _ChildWindowFromPoint@12
+[ 77](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000008d4 _SetWindowPos@28
+[ 78](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000994 _ShowWindow@8
+[ 79](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000a50 _ShowWindowAsync@8
+[ 80](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000a88 _DefWindowProcA@16
+[ 81](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000d14 _GetActiveWindow@0
+[ 82](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000d1c _SetActiveWindow@4
+[ 83](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000de0 _GetWindowRect@8
+[ 84](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000e28 _GetClientRect@8
+[ 85](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000e80 _ClientToScreen@8
+[ 86](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000eac _ScreenToClient@8
+[ 87](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f04 _GetWindowWord@8
+[ 88](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f04 _GetWindowLongA@8
+[ 89](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f20 _SetWindowWord@12
+[ 90](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f20 _SetWindowLongA@12
+[ 91](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f44 _CallWindowProcA@20
+[ 92](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f5c _GetFocus@0
+[ 93](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000f64 _SetFocus@4
+[ 94](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001000 _SetCapture@4
+[ 95](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001010 _GetCapture@0
+[ 96](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001018 _ReleaseCapture@0
+[ 97](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001024 _AdjustWindowRect@12
+[ 98](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001030 _AdjustWindowRectEx@16
+[ 99](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000103c _MapWindowPoints@16
+[100](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001084 _GetAncestor@8
+[101](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001090 _UpdateWindow@4
+[102](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000010c0 _MoveWindow@24
+[103](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000010f0 _SetWindowPlacement@8
+[104](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001114 _GetWindowPlacement@8
+[105](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000114c _EnableWindow@8
+[106](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001194 _IsWindowEnabled@4
+[107](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000011ac _CloseWindow@4
+[108](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000011b8 _GetUpdateRect@12
+[109](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001210 _FindWindowA@8
+[110](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000012ac _FindWindowExA@16
+[111](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000012cc _GetLastActivePopup@4
+[112](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000012d8 _ShowOwnedPopups@8
+[113](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000012e4 _RedrawWindow@16
+[114](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001324 _GetTitleBarInfo@8
+[115](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001330 _BringWindowToTop@4
+[116](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000134c _GetWindowRgn@8
+[117](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000138c _SetWindowRgn@12
+[118](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000013ec _LockWindowUpdate@4
+[119](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001440 _DrawMenuBar@4
+[120](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000144c _OpenIcon@4
+[121](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00001460 _DrawAnimatedRects@16
+[122](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000146c _GetWindowInfo@8
+[123](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000014dc _SetScrollRange@20
+[124](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000014e4 _SetScrollPos@16
+[125](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000af0 _exit2
+[126](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000010 g_hwndLock
+
+
+
+windowsw.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WINDOWSW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x148 nreloc 17 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateWindowExA@48
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DefWindowProcA@16
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _FindWindowA@8
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _FindWindowExA@16
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetWindowLongA@8
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetWindowTextA@12
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetWindowTextLengthA@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetWindowLongA@12
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetWindowTextA@8
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertAStrN@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateWindowExW@48
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _GetWindowTextW@12
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000070 _SetWindowTextW@8
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000088 _GetWindowTextLengthW@4
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000098 _DefWindowProcW@16
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b0 _GetWindowLongW@8
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _SetWindowLongW@12
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc _CallWindowProcW@20
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f4 _FindWindowW@8
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000011c _FindWindowExW@16
+
+
+
+WinHelp.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WINHELP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _WinHelpA@16
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000009 _WinHelpW@16
+
+
+
+WinHook.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WINHOOK.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetWindowsHookExA@16
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _UnhookWindowsHookEx@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _CallNextHookEx@16
+
+
+
+WinStat.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WINSTAT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetThreadDesktop@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _GetProcessWindowStation@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000010 _GetUserObjectInformationW@20
+
+
+
+wndclass.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WNDCLASS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2e4 nreloc 25 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x5 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__AddAtomA@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindAtomA@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlZeroMemory@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpyn@12
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetSysColorBrush@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc2@4
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _RegisterClassA@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _RegisterClassExA@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000154 __FindClass@4
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000180 _UnregisterClassA@8
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e8 _GetClassLongA@8
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000214 _SetClassLongA@12
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000248 _GetClassInfoA@12
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000294 _GetClassInfoExA@12
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002bc _GetClassNameA@12
+[ 25](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pWndClasses
+[ 26](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_bInit
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000000 _freeallclasses@0
+
+
+
+wndclasW.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WNDCLASW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x100 nreloc 16 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetClassInfoA@12
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetClassInfoExA@12
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetClassLongA@8
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetClassNameA@12
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RegisterClassA@4
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RegisterClassExA@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetClassLongA@12
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _UnregisterClassA@8
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertAStrN@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RegisterClassW@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c _RegisterClassExW@4
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000058 _UnregisterClassW@8
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000070 _GetClassLongW@8
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _SetClassLongW@12
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _GetClassInfoW@12
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b8 _GetClassInfoExW@12
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d4 _GetClassNameW@12
+
+
+
+wsprintf.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Wsprintf.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x14 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wvsprintfA@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wsprintfA
+
+
+
+wsprntfw.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WSPRNTFW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x14 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wvsprintfW@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wsprintfW
+
+
+
+wvsprntf.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WVSPRNTF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x5 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _vsprintf@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wvsprintfA@12
+
+
+
+wvsprtfw.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WVSPRTFW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2f nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _vsprintf@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _wvsprintfW@12
+
+
+
+.\TRANSTAB.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TRANSTAB.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x59 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___transtab
+
+
+
+.\SPRINTF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SPRINTF.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __output@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _vsprintf@12
+
+
+
+.\OUTPUT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 OUTPUT.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x467 nreloc 14 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___transtab
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 __output@12
+[  8](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000085 _normal
+[  9](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000091 _fbegin
+[ 10](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000a4 _fflags
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000c2 _fwidth
+[ 12](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000ed _fdot
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000f5 _fprec
+[ 14](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000011f _fprefix
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000155 _ftype
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 vtab
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000035d _storechars
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000020 szNull
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000428 _movchrx
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000041d _stochrx
+
+

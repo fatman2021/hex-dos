@@ -1,0 +1,2345 @@
+In archive libc32s.lib:
+
+.\crt0w.obj:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Crt0.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xb6 nreloc 20 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x2e nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .drectve
+AUX scnlen 0x19 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCommandLineA@0
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___argc
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___argv
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __environ
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___amsg_exit
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __exit
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _WinMain@16
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cinit
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __heap_init
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ioinit
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___getmainargs
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MessageBoxA@16
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _WinMainCRTStartup
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   3) (nx 0) 0x0000007e _amsg_exit
+[ 23](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 _hInstance
+[ 24](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 _lpszCmdLine
+[ 25](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000016 err
+[ 26](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 rterrstr
+
+
+
+.\__IOB.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 __IOB.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x6 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___p__iob
+
+
+
+.\_TEMPNAM.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _TEMPNAM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12f nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetEnvironmentVariableA@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __close
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __open
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000019 __tempnam
+[ 14](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 tmpstr
+
+
+
+.\_SFTBUF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _SFTBUF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xba nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flush
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __stdbuf
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __stbuf
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 __ftbuf
+
+
+
+.\_KBHIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _KBHIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x6e nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetNumberOfConsoleInputEvents@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__PeekConsoleInputA@16
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __coninpfh
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___initconin
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __kbhit
+
+
+
+.\_ISATTY.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _ISATTY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x27 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __isatty
+
+
+
+.\_GETCWD.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _GETCWD.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3d nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCurrentDirectoryA@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getcwd
+
+
+
+.\_GETBUF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _GETBUF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x41 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getbuf
+
+
+
+.\_FREEBUF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _freebuf.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2e nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[  7](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __freebuf
+
+
+
+.\_FLSBUF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _FLSBUF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x114 nreloc 10 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __lseek
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __write
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getbuf
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flsbuf
+
+
+
+.\_FILE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _FILE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x5a nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x288 nreloc 1 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XIC
+AUX scnlen 0x4 nreloc 1 nlnno 0
+[  8](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XPX
+AUX scnlen 0x4 nreloc 1 nlnno 0
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flsbuf
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000008 __iob
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 ___piob
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000028 __stdout
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000048 __stderr
+[ 16](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nstream
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___initstdio
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 ___endstdio
+
+
+
+.\_FILBUF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _FILBUF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x74 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __read
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getbuf
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __filbuf
+
+
+
+.\_CHDRIVE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 _CHDRIVE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetCurrentDirectoryA@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __chdrive
+
+
+
+.\VSNPRNTF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 vsnprntf.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _vsprintf
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __vsnprintf
+
+
+
+.\XTOA.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 XTOA.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xce nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __itoa
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002d _xtoa
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000089 __ltoa
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b3 __ultoa
+
+
+
+.\WRITE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Write.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x10c nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WriteFile@20
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __write
+
+
+
+.\WINXFLTR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 winxfltr.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x248 nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x88 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getptd
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _UnhandledExceptionFilter@4
+[  8](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __XcptActTab
+[  9](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000080 __XcptActTabSize
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000084 __XcptActTabCount
+[ 11](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000078 __First_FPE_Indx
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000007c __Num_FPE
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __XcptFilter
+
+
+
+.\WINSIG.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 winsig.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3bb nreloc 43 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .bss
+AUX scnlen 0x14 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetConsoleCtrlHandler@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __XcptActTab
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __XcptActTabSize
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __XcptActTabCount
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __First_FPE_Indx
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __Num_FPE
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getptd
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memcpy
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __exit
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __errno
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___doserrno
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000002 _signal
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000184 _ctrlevent_capture@4
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e6 _raise
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000036c _siglookup
+[ 25](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000010 _ConsoleCtrlHandler_Installed
+[ 26](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 _abort_action
+[ 27](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 _ctrlbreak_action
+[ 28](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000c _term_action
+[ 29](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 _ctrlc_action
+
+
+
+.\UNLINK.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 UNLINK.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xe nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__DeleteFileA@4
+[  7](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _remove
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __unlink
+
+
+
+.\ULLSHR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ULLSHR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1f nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __aullshr
+
+
+
+.\ULLREM.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ULLREM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x75 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __aullrem
+
+
+
+.\ULLDIV.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ULLDIV.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x68 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __aulldiv
+
+
+
+.\TRNSCTRL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TRNSCTRL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x6 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___CxxFrameHandler
+
+
+
+.\TRANSTAB.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TRANSTAB.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x59 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___transtab
+
+
+
+.\TOUPPER.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TOUPPER.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _toupper
+
+
+
+.\TIME.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TIME.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1b nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetTickCount@0
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _time
+
+
+
+.\TIDTABLE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 tidtable.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c2 nreloc 33 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCurrentThread@0
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetLastError@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsAlloc@0
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsFree@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsGetValue@4
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsSetValue@8
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __XcptActTab
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _calloc
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetCurrentThreadId@0
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __amsg_exit
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __mtinitlocks
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000001 __mtdeletelocks
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000002 __mtinit
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 __mtterm
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 __initptd
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000098 __getptd
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000114 __freeptd
+[ 25](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___tlsindex
+
+
+
+.\THREAD.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 THREAD.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x138 nreloc 16 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CloseHandle@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateThread@24
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ExitThread@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ResumeThread@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__TlsSetValue@8
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___tlsindex
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _calloc
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __amsg_exit
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __initptd
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getptd
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __freeptd
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __beginthreadex
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000088 __beginthread
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ec __endthreadex
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000108 __endthread
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   3) (nx 0) 0x000000b4 __threadstart@4
+
+
+
+.\TELL64.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 tell64.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetFilePointer@16
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __telli64
+
+
+
+.\TELL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 tell.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2c nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetFilePointer@16
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __tell
+
+
+
+.\STRUPR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRUPR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1e nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strupr
+
+
+
+.\STRTOL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRTOL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x9d nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strtol
+
+
+
+.\STRTIME.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRTIME.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x55 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLocalTime@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strtime
+
+
+
+.\STRSTR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRSTR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x34 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strstr
+
+
+
+.\STRSPN.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRSPN.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2f nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strspn
+
+
+
+.\STRREV.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 strrev.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strrev
+
+
+
+.\STRRCHR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 strrchr.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x25 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _strrchr
+
+
+
+.\STRNICMP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRNICMP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2a nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strnicmp
+
+
+
+.\STRNCPY.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRNCPY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1e nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strncpy
+
+
+
+.\STRNCMP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRNCMP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1d nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strncmp
+
+
+
+.\STRNCAT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRNCAT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2a nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strlen
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strncat
+
+
+
+.\STRLWR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRLWR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1e nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strlwr
+
+
+
+.\STRLEN.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRLEN.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strlen
+
+
+
+.\STRICMP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRICMP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x47 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __stricmp
+
+
+
+.\STRDUP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 strdup.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x34 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strcpy
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strlen
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strdup
+
+
+
+.\STRDATE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRDATE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x68 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLocalTime@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __strdate
+
+
+
+.\STRCPY.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRCPY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2e nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strcpy
+
+
+
+.\STRCMP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRCMP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x25 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strcmp
+
+
+
+.\STRCHR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRCHR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x26 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strchr
+
+
+
+.\STRCAT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRCAT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2e nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strcat
+
+
+
+.\STDENVP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STDENVP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x91 nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FreeEnvironmentStringsA@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetEnvironmentStrings@0
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __setenvp
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 environ
+
+
+
+.\STDARGV.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Stdargv.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xc4 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCommandLineA@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __setargv
+
+
+
+.\SSCANF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SSCANF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x17 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __input
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _sscanf
+
+
+
+.\SPRINTF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SPRINTF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x43 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __output
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _vsprintf
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000038 _sprintf
+
+
+
+.\SPLITPAT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Splitpat.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12b nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strncpy
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __splitpath
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __splitpath$
+
+
+
+.\SETVBUF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 setvbuf.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xd4 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flush
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __freebuf
+[  9](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _setvbuf
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ac _setbuf
+
+
+
+.\SCANF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SCANF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _gets
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __input
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _scanf
+
+
+
+.\RMDIR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 RMDIR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xe nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RemoveDirectoryA@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __rmdir
+
+
+
+.\RENAME.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 RENAME.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1a nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__MoveFileA@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _rename
+
+
+
+.\READ.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 READ.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xbd nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ReadFile@20
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetFilePointer@16
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __read
+
+
+
+.\QSORT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 QSORT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12f nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _qsort
+
+
+
+.\PUTS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PUTS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __fputchar
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _puts
+
+
+
+.\PUTENV.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PUTENV.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x4c nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetEnvironmentVariableA@8
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memcpy
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strchr
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __putenv
+
+
+
+.\PUTCH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PUTCH.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WriteConsoleA@20
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __confh
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___initconout
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __putch
+
+
+
+.\PUREVIRT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Purevirt.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xb nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __amsg_exit
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __purecall
+
+
+
+.\PRINTF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Printf.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3f nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __output
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __stbuf
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ftbuf
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _printf
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000035 _vprintf
+
+
+
+.\POW.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 pow.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x15 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xc nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __CIpow
+[  7](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000014 _pow
+
+
+
+.\OUTPUT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Output.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x452 nreloc 16 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___transtab
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getbuf
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flush
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 __output
+[ 10](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000083 _normal
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000008f _fbegin
+[ 12](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000a2 _fflags
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000c0 _fwidth
+[ 14](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000eb _fdot
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000f3 _fprec
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000011d _fprefix
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000153 _ftype
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 vtab
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000316 _storechars
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000020 szNull
+[ 21](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000413 _movchrx
+[ 22](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000408 _stochrx
+
+
+
+.\OPEN.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 OPEN.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xe9 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateFileA@28
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetFileType@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __dosmaperror
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000025 __sopen
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d1 __open
+
+
+
+.\MKDIR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MKDIR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x10 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateDirectoryA@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __mkdir
+
+
+
+.\MEMSET.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MEMSET.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x28 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memset
+
+
+
+.\MEMMOVE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MEMMOVE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x14 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memmove
+
+
+
+.\MEMICMP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MEMICMP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x4c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __memicmp
+
+
+
+.\MEMCPY.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MEMCPY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x27 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memcpy
+
+
+
+.\MEMCMP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MEMCMP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memcmp
+
+
+
+.\MEMCHRI.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Memchri.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x40 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __memchri
+
+
+
+.\MEMCHR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Memchr.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _memchr
+
+
+
+.\MB.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MB.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___mb_cur_max
+
+
+
+.\MALLOC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MALLOC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x80 nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapAlloc@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapCreate@12
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapFree@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapReAlloc@16
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __heapid
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ??3@YAXPAX@Z
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000001c ??2@YAPAXI@Z
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c _malloc
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 _realloc
+
+
+
+.\MAKEPATH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MAKEPATH.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x71 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __makepath
+
+
+
+.\MAINARGS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MAINARGS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __setargv
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __setenvp
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___getmainargs
+
+
+
+.\LSEEK64.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Lseek64.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetFilePointer@16
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __lseeki64
+
+
+
+.\LSEEK.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Lseek.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2e nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetFilePointer@16
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __lseek
+
+
+
+.\LLSHR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Llshr.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x21 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __allshr
+
+
+
+.\LLSHL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 LLSHL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1f nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __allshl
+
+
+
+.\LLREM.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 LLREM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xb2 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __allrem
+
+
+
+.\LLMUL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 LLMUL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x34 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __allmul
+
+
+
+.\LLDIV.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 LLDIV.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xaa nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __alldiv
+
+
+
+.\ISCTYPE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ISCTYPE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x8f nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStringTypeA@20
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __pctype
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___crtGetStringTypeA
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c __isctype
+
+
+
+.\IOINIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Ioinit.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x70 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetFileType@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStdHandle@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  9](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 ___pioinfo
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001d __ioinit
+
+
+
+.\INPUT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Input.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c5 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x20 nreloc 8 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___transtab
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __input
+[ 10](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 vtab
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000017d get_i
+[ 12](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000176 get_x
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000005d stochr
+[ 14](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000007e isesc
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000086 isflag
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000087 iswidth
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000091 isdot
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000092 isprec
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000093 ispref
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000000a8 istype
+
+
+
+.\INITTERM.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 initterm.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __initterm
+
+
+
+.\INITCON.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Initcon.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x6d nreloc 10 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0xf nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CloseHandle@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CreateFileA@28
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __coninpfh
+[ 11](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 __confh
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___initconin
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000020 ___initconout
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 ___termcon
+[ 15](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 szCONIN$
+[ 16](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000007 szCONOUT$
+
+
+
+.\HEAPINIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Heapinit.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x28 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcessHeap@0
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapCreate@12
+[  8](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __heapid
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __heap_init
+
+
+
+.\GETS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Gets.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x28 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __fgetchar
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _gets
+
+
+
+.\GETENV.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 GETENV.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x48 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __environ
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strlen
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _getenv
+
+
+
+.\GETDRIVE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Getdrive.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x31 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetCurrentDirectoryA@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getdrive
+
+
+
+.\GETCH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 GETCH.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x5c nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetConsoleMode@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ReadConsoleA@20
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetConsoleMode@8
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __coninpfh
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___initconin
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getch
+
+
+
+.\FWRITE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FWRITE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x27 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __write
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fwrite
+
+
+
+.\FTOL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ftol.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x27 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ftol
+
+
+
+.\FTELL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FTELL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x15 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __tell
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ftell
+
+
+
+.\FSTAT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 fstat.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xee nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetFileInformationByHandle@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetFileType@4
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __close
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __open
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000025 __fstat
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc __stat_
+[ 14](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ddstart
+
+
+
+.\FSEEK.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FSEEK.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x35 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __lseek
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fseek
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c _rewind
+
+
+
+.\FREAD.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FREAD.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x27 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __read
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fread
+
+
+
+.\FPUTS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fputs.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1d nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fputc
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fputs
+
+
+
+.\FPUTCHAR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fputchar.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x15 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fputc
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __fputchar
+
+
+
+.\FPUTC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fputc.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x29 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flsbuf
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fputc
+
+
+
+.\FPRINTF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fprintf.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3e nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __output
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __stbuf
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ftbuf
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fprintf
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000034 _vfprintf
+
+
+
+.\FOPEN.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fopen.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c0 nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___piob
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nstream
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __close
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __open
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flush
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __freebuf
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ac _fopen
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ec _freopen
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000118 __fdopen
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000017c _fclose
+
+
+
+.\FLENGTH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Flength.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x49 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetFileSize@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __filelength
+
+
+
+.\FLENGT64.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Flengt64.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x46 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetFileSize@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __filelengthi64
+
+
+
+.\FLATSEL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FLATSEL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+
+
+
+.\FINDFI64.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Findfi64.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xac nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindFirstFileA@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindNextFileA@8
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 __findfirsti64
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000080 __findnexti64
+
+
+
+.\FINDFILE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Findfile.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xcc nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindClose@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindFirstFileA@8
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FindNextFileA@8
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c __findfirst
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000007c __findnext
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a8 __findclose
+
+
+
+.\FGETS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fgets.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x30 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fgetc
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fgets
+
+
+
+.\FGETCHAR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fgetchar.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xe nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fgetc
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __fgetchar
+
+
+
+.\FGETC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fgetc.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __filbuf
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fgetc
+
+
+
+.\FFLUSH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Fflush.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x110 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nstream
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___piob
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __commit
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __write
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __flush
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000cc _fflush
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000104 __flushall
+
+
+
+.\EXSUP3.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Exsup3.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xc5 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __global_unwind2
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __local_unwind2
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __except_handler3
+
+
+
+.\EXSUP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 EXSUP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xf5 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x10 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlUnwind@16
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __global_unwind2
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000021 __unwind_handler
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000043 __local_unwind2
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b1 __abnormal_termination
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000019 _gu_return
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 __NLG_Destination
+
+
+
+.\EXCEPTL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 EXCEPTL.ASM
+File 
+[  2](sec -1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __except_list
+
+
+
+.\ERRNO.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ERRNO.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2c nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetLastError@0
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __errno
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000014 ___doserrno
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c __dosmaperror
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _errno
+[ 11](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 _doserrno
+
+
+
+.\DLLCRT0.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Dllcrt0.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x41 nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .drectve
+AUX scnlen 0x1d nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __environ
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DllMain@12
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __heap_init
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ioinit
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cinit
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cexit
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __setenvp
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __DllMainCRTStartup@12
+
+
+
+.\CTYPE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ctype.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x279 nreloc 6 nlnno 0
+[  6](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __pctype
+[  7](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 __pwctype
+[  8](sec  2)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000020c _isdigit
+[  9](sec  2)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000228 _isalpha
+[ 10](sec  2)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000244 _isalnum
+[ 11](sec  2)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000260 _isspace
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 __ctype
+
+
+
+.\CRT0INIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Crt0init.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XIA
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  8](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XIZ
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 10](sec  5)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XCA
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 12](sec  6)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XCZ
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 14](sec  7)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XPA
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 16](sec  8)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XPZ
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 18](sec  9)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XTA
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 20](sec 10)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .CRT$XTZ
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[ 22](sec  3)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xi_a
+[ 23](sec  4)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xi_z
+[ 24](sec  5)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xc_a
+[ 25](sec  6)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xc_z
+[ 26](sec  7)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xp_a
+[ 27](sec  8)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xp_z
+[ 28](sec  9)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xt_a
+[ 29](sec 10)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xt_z
+
+
+
+.\CRT0DAT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Crt0dat.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x78 nreloc 15 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x10 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ExitProcess@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xi_a
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xi_z
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xc_a
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xc_z
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xp_a
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xp_z
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xt_a
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___xt_z
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _free
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __initterm
+[ 17](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __onexitbegin
+[ 18](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 __environ
+[ 19](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000008 ___argc
+[ 20](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000000c ___argv
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cinit
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000025 __cexit
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000069 _exit
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000069 __exit
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000006e ____exit
+
+
+
+.\CRT0.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Crt0.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x9a nreloc 18 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x26 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .drectve
+AUX scnlen 0x16 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetStdHandle@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WriteFile@20
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___argc
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___argv
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __environ
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___amsg_exit
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __exit
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _main
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cinit
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __heap_init
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ioinit
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 ___getmainargs
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _mainCRTStartup
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   3) (nx 0) 0x00000054 _amsg_exit
+[ 22](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000e err
+[ 23](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 rterrstr
+
+
+
+.\CREAT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CREAT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1a nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __sopen
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __creat
+
+
+
+.\CPUTS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Cputs.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3e nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WriteConsoleA@20
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __confh
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___initconout
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strlen
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cputs
+
+
+
+.\COMMIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COMMIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x37 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FlushFileBuffers@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __commit
+
+
+
+.\CLOSE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CLOSE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x44 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__CloseHandle@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __close
+
+
+
+.\CHSIZE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CHSIZE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3e nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetEndOfFile@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp___llseek@12
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___pioinfo
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __nhandle
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __chsize
+
+
+
+.\CHDIR.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CHDIR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x13 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetCurrentDirectoryA@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __chdir
+
+
+
+.\CGETS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CGETS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xab nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetConsoleMode@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__ReadConsoleA@20
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetConsoleMode@8
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __coninpfh
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___initconin
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __cgets
+
+
+
+.\CALLOC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CALLOC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2f nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _calloc
+
+
+
+.\BSEARCH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 BSEARCH.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xaa nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _bsearch
+
+
+
+.\ATONEXIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ATONEXIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x43 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __onexitbegin
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _malloc
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000031 __onexit
+
+
+
+.\ATOL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ATOL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x48 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atoi
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atol
+
+
+
+.\ATOF.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ATOF.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _strlen
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atof
+
+
+
+.\ASSERT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ASSERT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x70 nreloc 10 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x42 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcAddress@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fprintf
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _sprintf
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __assert
+[ 14](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 szAssert
+[ 15](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000028 ??0000
+[ 16](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000002f ??0002
+[ 17](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003b ??0004
+
+
+
+.\AMSGEXIT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Amsgexit.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x9 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 ___amsg_exit
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __amsg_exit
+
+
+
+.\ADJUSTFD.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 adjustfd.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __adjust_fdiv
+
+
+
+.\ACCESS.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ACCESS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x69 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __close
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __open
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __access
+
+
+
+.\ABORT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 abort.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x1f nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __iob
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _fprintf
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _raise
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _abort
+[ 12](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+
+

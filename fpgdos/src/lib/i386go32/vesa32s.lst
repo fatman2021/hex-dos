@@ -1,0 +1,269 @@
+In archive vesa32s.lib:
+
+getvmode.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 GETVMODE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x15c nreloc 11 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x14 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_vesainfo
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_bVesaInfo
+[  8](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 _g_dwLinearBasePtr
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _IsModeSupported@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _GetVesaVideoMemorySize@0
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _GetVesaModeInfo@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000138 _SetMaxVideoResolution@12
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_dwXMax
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000c g_dwYMax
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_dwPhysBasePtr
+[ 16](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000010 g_dwFrequencyMax
+
+
+
+init.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 INIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _VesaMouseExit@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __SetDisplayStartProc@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetVesaInfo@0
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _VesaInit@0
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000010 _VesaExit@0
+
+
+
+mousegfx.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MOUSEGFX.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x930 nreloc 190 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x190 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .bss
+AUX scnlen 0x1100 nreloc 0 nlnno 0
+[  8](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x27 nreloc 0 nlnno 0
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetVesaMode@0
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetVesaModeInfo@8
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetVesaPaletteEntries@12
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_dwRestoreNotify
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetCursorPaletteEntries@8
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c0 _VesaMouseInit@0
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e0 _VesaMouseExit@0
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004cc _MouseSetDisplayStart@0
+[ 18](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000051 g_bBlack
+[ 19](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000052 g_bWhite
+[ 20](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000154 g_rmcb
+[ 21](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000004f g_bMask
+[ 22](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000018a g_prevHdlDX
+[ 23](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000018c g_prevHdlES
+[ 24](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000018e g_prevHdlCX
+[ 25](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_oldint33
+[ 26](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000010 g_csalias
+[ 27](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+[ 28](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000009 ??0001
+[ 29](sec  4)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000018 ??0002
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000274 _myint33@0
+[ 31](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_oldint10
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000509 _myint10@0
+[ 33](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000158 g_rmcs
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000830 _evntproc@0
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x0000001c _RestoreNotify@0
+[ 36](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000050 g_bVesaLFBMode
+[ 37](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000040 g_cntShowMouse
+[ 38](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000014 g_dwMousePos
+[ 39](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000004e g_bIgnMickeys
+[ 40](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000004d g_bHeight
+[ 41](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000018 g_wXRangeMin
+[ 42](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001a g_wXRangeMax
+[ 43](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001c g_wYRangeMin
+[ 44](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001e g_wYRangeMax
+[ 45](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000028 g_dwHotSpotX
+[ 46](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000002c g_dwHotSpotY
+[ 47](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000044 g_dwWidth
+[ 48](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000024 g_dwBMSize
+[ 49](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_CsrBM
+[ 50](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000004c g_bHidden
+[ 51](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000054 g_svgainfo
+[ 52](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000030 g_lPitch
+[ 53](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003c g_dwScreenSize
+[ 54](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000034 g_pScreen
+[ 55](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000038 g_pEndOfScreen
+[ 56](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000048 g_bDrawing
+[ 57](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000068c hideprocs
+[ 58](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000006cc _showprocs
+[ 59](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000100 g_savedPixels
+[ 60](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000710 _hide1
+[ 61](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000070c _void_
+[ 62](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000714 _hide2
+[ 63](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000718 _hide3
+[ 64](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000071c _hide4
+[ 65](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000720 _move1bg
+[ 66](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000730 _move1fg
+[ 67](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000007a8 _move1xx
+[ 68](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000740 _move2bg
+[ 69](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000750 _move2fg
+[ 70](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000007b4 _move2xx
+[ 71](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000760 _move3bg
+[ 72](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000778 _move3fg
+[ 73](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000007c4 _move3xx
+[ 74](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000790 _move4bg
+[ 75](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000079c _move4fg
+[ 76](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000007e0 _move4xx
+[ 77](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000020 g_wLastMickeyX
+[ 78](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000022 g_wLastMickeyY
+
+
+
+saverest.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SAVEREST.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x134 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_dwRestoreNotify
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 _GetVesaStateBufferSize@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _SaveVesaVideoState@8
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c0 _RestoreVesaVideoState@4
+
+
+
+setdisp.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SETDISP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x144 nreloc 20 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xc nreloc 2 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MouseSetDisplayStart@0
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_Vesa32Options
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_vesainfo
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetVesaDisplayStart@12
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a0 _GetVesaDisplayStart@0
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c0 _GetVesaFlipStatus@0
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc __SetDisplayStartProc@4
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_dwDisplayStart
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_lpfnSetDisplayStart
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_dwFlipStatus
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000c6 _flipstatusdefault
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000048 _vbe3direct
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000cc _flipstatusint
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000024 _vbe2direct
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000038 _vbe3int
+[ 21](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000000c _vbe2int
+
+
+
+setpal.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SETPAL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x220 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_Vesa32Options
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_vesainfo
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001ac _SetVesaPaletteEntries@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001f8 _GetVesaPaletteEntries@12
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000210 __SetPaletteProc@4
+[ 11](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_lpfnSetPalette
+
+
+
+setvmode.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SETVMODE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x58 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_vesainfo
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetVesaMode@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 _GetVesaMode@0
+
+
+
+srchmode.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SRCHMODE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1bc nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _IsModeSupported@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _EnumVesaModes@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000016c _SearchVesaMode@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x000000f8 _myselproc@12
+
+
+
+vesainfo.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 VESAINFO.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xd0 nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x201 nreloc 0 nlnno 0
+[  6](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000200 _g_bVesaInfo
+[  7](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_vesainfo
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetVesaInfo@0
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a4 _GetVesaInfo@4
+
+
+
+vesaopt.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 VESAOPT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x94 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xc nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __SetDisplayStartProc@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __SetPaletteProc@4
+[  8](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_Vesa32Options
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _SetVesa32Options@4
+
+
+
+videomem.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 VIDEOMEM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x25c nreloc 5 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetVesaMode@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetVesaModeInfo@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetVesaMemoryBufferSize@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000018c _SaveVesaVideoMemory@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000204 _RestoreVesaVideoMemory@4
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000070 _savetab
+
+

@@ -1,0 +1,1027 @@
+In archive dgdi32s.lib:
+
+.\Arc.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ARC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x54 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _Ellipse@20
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c _Arc@36
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000038 _Pie@36
+
+
+
+.\AtExit.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ATEXIT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x54 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDIfree@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000038 _doatexit
+[ 10](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pAtExit
+
+
+
+.\BitBlt.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 BITBLT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x4ba nreloc 45 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col16to8@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col24to8@0
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col24to16@0
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col16to24@0
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BitBlt@36
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000229 __retn
+[ 14](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000184 _copyprocs
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000224 _blt1to01
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000022a _blt8to01
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000022b _blt16to01
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000022c _blt24to01
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000022d _blt32to01
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000224 _blt4to01
+[ 21](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000280 _blt1to08
+[ 22](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000230 _blt8to08
+[ 23](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002c0 _blt16to08
+[ 24](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002f8 _blt24to08
+[ 25](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000314 _blt32to08
+[ 26](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002a0 _blt4to08
+[ 27](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000324 _blt1to16
+[ 28](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000374 _blt8to16
+[ 29](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000264 _blt16to16
+[ 30](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000038c _blt24to16
+[ 31](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000003a8 _blt32to16
+[ 32](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000348 _blt4to16
+[ 33](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000003b8 _blt1to24
+[ 34](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000408 _blt8to24
+[ 35](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000041c _blt16to24
+[ 36](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000270 _blt24to24
+[ 37](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000434 _blt32to24
+[ 38](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000003e0 _blt4to24
+[ 39](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000444 _blt1to32
+[ 40](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000488 _blt8to32
+[ 41](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000498 _blt16to32
+[ 42](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000004ac _blt24to32
+[ 43](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000027c _blt32to32
+[ 44](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000468 _blt4to32
+[ 45](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000258 _usepaltransX
+
+
+
+.\BITMAP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 BITMAP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x178 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCompatibleBitmap@12
+
+
+
+.\BITMAP2.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 BITMAP2.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x240 nreloc 9 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDIBits@28
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetDIBits@28
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hdc
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateBitmap@20
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000140 _GetBitmapBits@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001c0 _SetBitmapBits@12
+
+
+
+.\BRUSH.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 BRUSH.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xf8 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetNearestColor@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateSolidBrush@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 _CreatePatternBrush@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000005c _CreateBrushIndirect@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ac _SetDCBrushColor@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc _GetDCBrushColor@4
+
+
+
+.\CLIPPING.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CLIPPING.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1d0 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 _SelectClipRgn@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _GetClipRgn@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _OffsetClipRgn@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _ExcludeClipRect@20
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000184 _IntersectClipRect@20
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001b8 _PtVisible@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001c4 _RectVisible@8
+
+
+
+.\ColSpace.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COLSPACE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateColorSpaceA@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CreateColorSpaceW@4
+
+
+
+.\ColTrans.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COLTRANS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x16c nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetNearestPaletteIndex@8
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_syspal
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col16to8@0
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000008 __col24to8@0
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 __col8to24@0
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000005c __col24to15@0
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 __col15to24@0
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b8 __col24to16@0
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000e0 __col16to24@0
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000104 __GetNearestColor@8
+
+
+
+.\CompDC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 COMPDC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x80 nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCompatibleBitmap@12
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetStockObject@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SelectPalette@12
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _getdisplaydc@0
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[ 12](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_DefaultBM
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCompatibleDC@4
+
+
+
+.\ConvWStr.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CONVWSTR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x34 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenW@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+
+
+
+.\CreateDC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CREATEDC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x134 nreloc 13 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x8 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcmpi@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenW@4
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _getdisplaydc@0
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDIfree@4
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 16](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hdc
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateDCA@16
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a8 _CreateDCW@16
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d4 _DeleteDC@4
+[ 20](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+
+
+
+.\CreateIC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CREATEIC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateICA@16
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CreateICW@16
+
+
+
+.\DevCaps.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 DEVCAPS.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xe4 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDeviceCaps@8
+
+
+
+.\DIBITMAP.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 DIBITMAP.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x414 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlZeroMemory@8
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BitBlt@36
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCompatibleBitmap@12
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getclrtabsize@0
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _GetDIBits@28
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000108 _SetDIBits@28
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000224 _SetDIBitsToDevice@48
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002b0 _CreateDIBitmap@24
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000300 _CreateDIBSection@24
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000039c _SetDIBColorTable@16
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003d4 _GetDIBColorTable@16
+
+
+
+.\DisplyDC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 DISPLYDC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x2a4 nreloc 57 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x28 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x71 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__FreeLibrary@4
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcAddress@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LoadLibraryA@4
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetStockObject@4
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SelectObject@8
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SelectPalette@12
+[ 14](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetBkColor@8
+[ 15](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetTextColor@8
+[ 16](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __initsyspal@0
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __ClearFontStock@0
+[ 20](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_hdc
+[ 21](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000010 _g_bCharHeight
+[ 22](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000011 _g_bMouse
+[ 23](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x0000001c _g_lpfnGetVesaPaletteEntries
+[ 24](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000020 _g_lpfnSetVesaPaletteEntries
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000010 _GetVesaProcs@0
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _getdisplaydc@0
+[ 27](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000c g_hVesa
+[ 28](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000000 _deleteVesaLib@0
+[ 30](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000007 ??0001
+[ 31](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000015 ??0002
+[ 32](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000014 g_lpfnGetVesaMode
+[ 33](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000021 ??0003
+[ 34](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000018 g_lpfnGetVesaModeInfo
+[ 35](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000031 ??0004
+[ 36](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000047 ??0005
+[ 37](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000005d ??0006
+[ 38](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000024 g_lpfnGetVesaDisplayStart
+[ 39](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_dwMode
+[ 40](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000008 g_dwScanLine
+[ 41](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000012 g_bInit
+
+
+
+.\ESCAPE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 ESCAPE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x28 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _Escape@20
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _ExtEscape@24
+
+
+
+.\FLFILL.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FLFILL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x1c nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _FloodFill@16
+
+
+
+.\FONT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FONT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x654 nreloc 33 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x5 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlZeroMemory@8
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp___llseek@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp___lopen@8
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp___lclose@4
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp___lread@12
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcmpi@8
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpy@8
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpyA@8
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpyn@12
+[ 16](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenA@4
+[ 17](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDIfree@4
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _AddFontResourceA@4
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001b0 __FindFontResource@4
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000284 __FillTextMetric@8
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002d8 __EnumFontResource@12
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000384 _CreateFontIndirectA@4
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003b0 _CreateFontA@56
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000042c _GetTextMetricsA@8
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000044c _GetOutlineTextMetricsA@12
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000045c _GetGlyphOutlineA@28
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000468 __FillEnumLogFont@8
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004ac _EnumFontFamiliesA@16
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000580 _EnumFontFamiliesExA@20
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005a8 _GetFontData@20
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005b4 _GetTextCharsetInfo@12
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005ec _GetTextCharset@4
+[ 36](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000600 _GetTextFaceA@12
+[ 37](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000648 _TranslateCharsetInfo@12
+[ 38](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_pFonts
+[ 39](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_bDestAdded
+[ 40](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000000 __deleteallfontresource@0
+[ 41](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000524 _mycallback@12
+
+
+
+.\FONTW.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 FONTW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x154 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WideCharToMultiByte@32
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpynW@12
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateFontIndirectA@4
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetTextFaceA@12
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __FillTextMetric@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateFontIndirectW@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 _CreateFontW@56
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000bc _GetTextMetricsW@8
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000dc _GetOutlineTextMetricsW@12
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ec _GetGlyphOutlineW@28
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f8 _GetTextFaceW@12
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000013c _EnumFontFamiliesW@16
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000148 _EnumFontFamiliesExW@20
+
+
+
+.\GAMMA.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 GAMMA.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x40 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetDeviceGammaRamp@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000034 _SetDeviceGammaRamp@8
+
+
+
+.\GETBMDIM.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 GETBMDIM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x18 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetBitmapDimensionEx@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _SetBitmapDimensionEx@16
+
+
+
+.\LINE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 LINE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x228 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetNearestColor@8
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __SetPixel@16
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __FillPolygon@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetCurrentPositionEx@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000020 _MoveToEx@16
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 _LineTo@12
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000018c _Polyline@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001a4 _Polygon@12
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001cc _PolyPolyline@16
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001d8 _Rectangle@20
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000218 _GdiFlush@0
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000021c _GdiSetBatchLimit@4
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000119 _SetPixelDummy
+
+
+
+.\MALLOC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MALLOC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xac nreloc 14 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x5 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcessHeap@0
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapAlloc@12
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapCreate@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapDestroy@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__HeapFree@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 __GDImalloc@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 __GDImalloc2@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000070 __GDIfree@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000008c __GDIHeapDestroy@0
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_hHeap
+[ 16](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000004 g_bIsShared
+
+
+
+.\MAPPING.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MAPPING.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x12c nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__SetLastError@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetMapMode@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000014 _SetMapMode@8
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000028 _GetGraphicsMode@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _SetGraphicsMode@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 _SetDCOrgEx@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000080 __SetDCBitPtr@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000094 _GetDCOrgEx@8
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _GetWorldTransform@8
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ec _SetWorldTransform@8
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000100 _ModifyWorldTransform@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000114 _DPtoLP@12
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _LPtoDP@12
+
+
+
+.\MASKBLT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MASKBLT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x27 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BitBlt@36
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _MaskBlt@48
+
+
+
+.\METAFILE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 METAFILE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x6c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateMetaFileW@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateMetaFileA@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CloseMetaFile@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _DeleteMetaFile@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _PlayMetaFile@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _PlayMetaFileRecord@16
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _CopyMetaFileW@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _CopyMetaFileA@8
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _GetMetaFileBitsEx@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _SetMetaFileBitsEx@8
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _EnumMetaFile@16
+
+
+
+.\METAFIL2.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 METAFIL2.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x9c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateEnhMetaFileW@16
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateEnhMetaFileA@16
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CloseEnhMetaFile@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _DeleteEnhMetaFile@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _PlayEnhMetaFile@12
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _PlayEnhMetaFileRecord@16
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _CopyEnhMetaFileW@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _CopyEnhMetaFileA@8
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _GetEnhMetaFileBits@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _SetEnhMetaFileBits@8
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _GetEnhMetaFileHeader@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000006c _GetEnhMetaFilePaletteEntries@12
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000078 _EnumEnhMetaFile@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _GetWinMetaFileBits@20
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000090 _SetWinMetaFileBits@16
+
+
+
+.\MOUSE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 MOUSE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_bMouse
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000014 _HideMouse@0
+
+
+
+.\Object.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 OBJECT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x370 nreloc 9 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDIfree@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetNearestColor@8
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_DefaultBM
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __getclrtabsize@0
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000008c _SelectObject@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000108 _DeleteObject@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000184 _GetCurrentObject@8
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001c4 _GetObjectA@12
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002b0 _GetObjectW@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002c8 _GetObjectType@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000034c _UnrealizeObject@4
+
+
+
+.\PALETTE.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PALETTE.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x650 nreloc 36 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x418 nreloc 2 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetStockObject@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetVesaProcs@0
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnGetVesaPaletteEntries
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_lpfnSetVesaPaletteEntries
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetNearestColor@8
+[ 13](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _pfnRealizePalette
+[ 14](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000004 _pfnSelectPalette
+[ 15](sec  2)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000008 _g_syspal
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreatePalette@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000038 _CreateHalftonePalette@4
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _ResizePalette@8
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b4 __initsyspal@0
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x000000f8 _RealizePalette@4
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000033c _SelectPalette@12
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000374 _SetPaletteEntries@16
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003b8 _AnimatePalette@16
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000046c _GetPaletteEntries@16
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004ac _GetSystemPaletteEntries@16
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000004fc _GetNearestPaletteIndex@8
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000580 _SetSystemPaletteUse@8
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005b0 _GetSystemPaletteUse@4
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000005d0 _GetNearestColor@8
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000062c _UpdateColors@4
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000638 __GetDCColorMap@4
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000100 __RealizePalette@4
+
+
+
+.\PatBlt.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PATBLT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x20c nreloc 16 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BitBlt@36
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCompatibleDC@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DeleteDC@4
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SelectObject@8
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PatBlt@24
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000001f8 _bltprocs
+[ 14](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000010e _fill08_1
+[ 15](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000130 _fill16_1
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000148 _fill24_1
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000011c _fill00
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000000fc _fill08
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000120 _fill16
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x0000013c _fill24
+[ 21](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x00000158 _fill32
+
+
+
+.\PEN.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PEN.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xa0 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreatePen@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c _ExtCreatePen@20
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _SetDCPenColor@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _GetDCPenColor@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000078 _GetROP2@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000008c _SetROP2@8
+
+
+
+.\Pixel.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PIXEL.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x130 nreloc 8 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col8to24@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col15to24@0
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __col16to24@0
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetNearestColor@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetPixel@12
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000008c __SetPixel@16
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000104 _SetPixel@16
+
+
+
+.\PixForm.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PIXFORM.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x16c nreloc 22 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x4 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[  7](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetProcAddress@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000068 _ChoosePixelFormat@8
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000098 _GetPixelFormat@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _GdiSetPixelFormat@0
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c4 _SetPixelFormat@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f8 _GdiDescribePixelFormat@0
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f8 _DescribePixelFormat@16
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000130 _GdiSwapBuffers@0
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000130 _SwapBuffers@4
+[ 16](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 szOpenGL32
+[ 17](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000009 szwglChoosePixelFormat
+[ 18](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000035 szwglGetPixelFormat
+[ 19](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000047 szwglSetPixelFormat
+[ 20](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001e szwglDescribePixelFormat
+[ 21](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 g_lpfnSwapBuffers
+[ 22](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000059 szwglSwapBuffers
+
+
+
+.\POLYGON.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 POLYGON.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x367 nreloc 7 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002fc __FillPolygon@12
+[  9](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x000002cc _lineprocs
+[ 10](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002dc _line8bpp
+[ 11](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002e0 _line16bpp
+[ 12](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002e4 _line24bpp
+[ 13](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002f8 _line32bpp
+
+
+
+.\PRINT.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 PRINT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x48 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _StartDocW@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _StartDocA@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _EndDoc@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _AbortDoc@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _SetAbortProc@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _StartPage@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _EndPage@4
+
+
+
+.\REGION.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 REGION.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x354 nreloc 6 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _PatBlt@24
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SelectObject@8
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc@4
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateRectRgnIndirect@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _CreateRectRgn@16
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000004c _ExtCreateRegion@12
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _SetRectRgn@20
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a8 _OffsetRgn@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _GetRegionData@12
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000170 _GetRgnBox@8
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001a8 _GetClipBox@8
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001d8 _PaintRgn@8
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000218 _FillRgn@12
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002c8 _CombineRgn@16
+
+
+
+.\RESETDC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 RESETDC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xc nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ResetDCA@8
+
+
+
+.\SaveDC.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 SAVEDC.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xd0 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDIfree@4
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SaveDC@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000038 _RestoreDC@8
+
+
+
+.\StockObj.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STOCKOBJ.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x248 nreloc 35 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0xdc nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x7 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlZeroMemory@8
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpy@8
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __FindFontResource@4
+[ 11](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _atexit
+[ 12](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDImalloc2@4
+[ 13](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GDIfree@4
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 _g_bCharHeight
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000144 _GetStockObject@4
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000208 __ClearFontStock@0
+[ 17](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000006c hFontOemFix
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   6) (nx 0) 0x00000000 _deleteOEMfixfont@0
+[ 19](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0003
+[ 20](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000074 hFontSystem
+[ 21](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 hBrWhite
+[ 22](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000000c hBrLtGray
+[ 23](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000018 hBrGray
+[ 24](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000024 hBrDkGray
+[ 25](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000030 hBrBlack
+[ 26](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003c hPenBlack
+[ 27](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000004c hPenWhite
+[ 28](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000005c hPenNull
+[ 29](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000007c _hSysPalette
+
+
+
+.\Stretch.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 STRETCH.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xa4 nreloc 4 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _BitBlt@36
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CreateCompatibleDC@4
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _DeleteDC@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetStretchBltMode@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _StretchBlt@44
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000040 _StretchDIBits@52
+
+
+
+.\TextOut.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 TEXTOUT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x36c nreloc 12 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[  7](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ShowMouse@0
+[  8](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _HideMouse@0
+[  9](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 10](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 __GetNearestColor@8
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _SetBkMode@8
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000014 _GetBkColor@4
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _SetBkColor@8
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _GetTextColor@4
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _SetTextColor@8
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000074 _GetTextAlign@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _SetTextAlign@8
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000094 _GetCharWidth32A@16
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000094 _GetCharWidthA@16
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c8 _GetCharWidth32W@16
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c8 _GetCharWidthW@16
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000e0 _GetCharABCWidthsA@16
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000ec _GetCharABCWidthsW@16
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f8 _GetTextExtentPointA@16
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f8 _GetTextExtentPoint32A@16
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000150 _GetTextExtentPointW@16
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000150 _GetTextExtentPoint32W@16
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000174 _GetCharacterPlacementA@24
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000180 _GetCharacterPlacementW@24
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000018c _TextOutA@20
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002f4 _TextOutW@20
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000320 _ExtTextOutA@32
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000033c _ExtTextOutW@32
+[ 34](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002dc _setcolor8
+[ 35](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002e0 _setcolor16
+[ 36](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002e4 _setcolor24
+[ 37](sec  1)(fl 0x00)(ty   0)(scl   6) (nx 0) 0x000002f0 _setcolor32
+
+
+
+.\ViewPort.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 VIEWPORT.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xdc nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetViewportOrgEx@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _SetViewportOrgEx@16
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _OffsetViewportOrgEx@16
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _GetViewportExtEx@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a8 _SetViewportExtEx@16
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d0 _ScaleViewportExtEx@24
+
+
+
+.\Window.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 WINDOW.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xbc nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetWindowOrgEx@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000001c _SetWindowOrgEx@16
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000044 _OffsetWindowOrgEx@16
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000006c _GetWindowExtEx@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000088 _SetWindowExtEx@16
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b0 _ScaleWindowExtEx@24
+
+

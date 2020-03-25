@@ -1,0 +1,253 @@
+In archive dadvapis.lib:
+
+ConvWStr.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 CONVWSTR.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x88 nreloc 1 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlenW@4
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000002c _ConvertAStrN@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000064 _ConvertAStr@4
+
+
+
+Crypt.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Crypt.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x158 nreloc 2 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x2 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _CryptGenRandom@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CryptAcquireContextA@20
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _CryptAcquireContextW@20
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _CryptReleaseContext@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _CryptCreateHash@20
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _CryptDestroyHash@4
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _CryptHashData@16
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _CryptDestroyKey@4
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _CryptDeriveKey@20
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000006c _CryptGenKey@16
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000078 _CryptGetUserKey@12
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _CryptImportKey@24
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000090 _CryptExportKey@24
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _CryptEncrypt@28
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a8 _CryptDecrypt@24
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b4 _CryptSetKeyParam@16
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c0 _CryptGetKeyParam@20
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000cc _CryptSetProvParam@16
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _CryptGetProvParam@20
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000e4 _CryptSetHashParam@16
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f0 _CryptGetHashParam@20
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _CryptVerifySignatureA@24
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000108 _CryptSignHashA@24
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000114 _CryptEnumProvidersA@24
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _SystemFunction036@8
+[ 31](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 wOfs
+
+
+
+EventLog.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 EventLog.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x3c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _RegisterEventSourceA@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _RegisterEventSourceW@8
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _DeregisterEventSource@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _ReportEventA@36
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _ReportEventW@36
+
+
+
+Registry.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 REGISTRY.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0xb40 nreloc 67 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x30 nreloc 5 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0x65 nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleFileNameA@12
+[  9](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetModuleHandleA@4
+[ 10](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetPrivateProfileStringA@24
+[ 11](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalAlloc@8
+[ 12](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__LocalFree@4
+[ 13](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__RtlMoveMemory@12
+[ 14](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__WritePrivateProfileStringA@16
+[ 15](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcat@8
+[ 16](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrcpy@8
+[ 17](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__lstrlen@4
+[ 18](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertWStr@0
+[ 19](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _ConvertAStrN@12
+[ 20](sec  0)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetUserNameA@8
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000029c _RegOpenKeyA@12
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002b4 _RegOpenKeyW@12
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002d4 _RegOpenKeyExA@20
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000002ec _RegOpenKeyExW@20
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000308 _RegCreateKeyA@12
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000320 _RegCreateKeyExA@36
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000338 _RegCreateKeyW@12
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000358 _RegCreateKeyExW@36
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000370 _RegDeleteKeyA@8
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000003f0 _RegDeleteKeyW@8
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000408 _RegEnumKeyA@16
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000430 _RegEnumKeyExA@32
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000568 _RegEnumValueA@32
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000664 _RegEnumKeyW@16
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000684 _RegEnumKeyExW@32
+[ 36](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000006b0 _RegEnumValueW@32
+[ 37](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000006e4 _RegDeleteValueA@8
+[ 38](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000720 _RegDeleteValueW@8
+[ 39](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000738 _RegQueryValueA@16
+[ 40](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000007cc _RegQueryValueW@16
+[ 41](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000007fc _RegQueryValueExA@24
+[ 42](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000091c _RegQueryValueExW@24
+[ 43](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000974 _RegSetValueA@20
+[ 44](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000009c8 _RegSetValueExA@24
+[ 45](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000a90 _RegSetValueW@20
+[ 46](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000a9c _RegSetValueExW@24
+[ 47](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000aa8 _RegCloseKey@4
+[ 48](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000aec _RegQueryInfoKeyA@48
+[ 49](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000af8 _RegQueryInfoKeyW@48
+[ 50](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000b04 _RegFlushKey@4
+[ 51](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000b10 _RegSaveKeyA@12
+[ 52](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000b1c _RegRestoreKeyA@12
+[ 53](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000b28 _RegNotifyChangeKeyValue@20
+[ 54](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000b34 _RegConnectRegistryA@12
+[ 55](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000046 ??0005
+[ 56](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 _regions
+[ 57](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000030 _endregions
+[ 58](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000004f ??0007
+[ 59](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000051 ??0008
+[ 60](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000054 ??000A
+[ 61](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000052 ??0009
+[ 62](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000055 ??0014
+[ 63](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000057 ??001E
+[ 64](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000058 ??0020
+[ 65](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000059 ??0026
+[ 66](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000005b ??0029
+[ 67](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000005d ??002A
+[ 68](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000005e ??002D
+[ 69](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000060 ??002E
+[ 70](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000061 ??0031
+[ 71](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000063 ??0033
+[ 72](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+[ 73](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000012 ??0001
+[ 74](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000001a ??0002
+[ 75](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000002c ??0003
+[ 76](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x0000003f ??0004
+
+
+
+username.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 USERNAME.ASM
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x88 nreloc 3 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .rdata
+AUX scnlen 0xd nreloc 0 nlnno 0
+[  8](sec  0)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 __imp__GetEnvironmentVariableA@12
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _GetUserNameA@8
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000050 _GetUserNameW@8
+[ 11](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000000 ??0000
+[ 12](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 0) 0x00000009 ??0001
+
+
+
+Security.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Security.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x24c nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _InitializeSecurityDescriptor@8
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _GetSecurityDescriptorControl@12
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _GetKernelObjectSecurity@20
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _SetKernelObjectSecurity@12
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _IsValidSecurityDescriptor@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _GetSecurityDescriptorDacl@16
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _SetSecurityDescriptorDacl@16
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _GetSecurityDescriptorSacl@16
+[ 14](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000060 _GetSecurityDescriptorOwner@12
+[ 15](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000006c _GetSecurityDescriptorGroup@12
+[ 16](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000078 _GetSecurityDescriptorLength@4
+[ 17](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000084 _GetSecurityInfo@32
+[ 18](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000090 _GetFileSecurityA@20
+[ 19](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000009c _GetFileSecurityW@20
+[ 20](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000a8 _SetFileSecurityA@12
+[ 21](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000b4 _SetFileSecurityW@12
+[ 22](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000c0 _OpenProcessToken@12
+[ 23](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000cc _OpenThreadToken@16
+[ 24](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000d8 _GetTokenInformation@20
+[ 25](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000e4 _SetThreadToken@8
+[ 26](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000f0 _AdjustTokenPrivileges@24
+[ 27](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000000fc _DuplicateToken@12
+[ 28](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000108 _DuplicateTokenEx@24
+[ 29](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000114 _InitializeAcl@12
+[ 30](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000120 _IsValidAcl@4
+[ 31](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000012c _SetEntriesInAclW@16
+[ 32](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000138 _AddAccessAllowedAce@16
+[ 33](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000144 _DeleteAce@8
+[ 34](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000150 _GetAce@12
+[ 35](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000015c _AllocateAndInitializeSid@44
+[ 36](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000168 _InitializeSid@12
+[ 37](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000190 _IsValidSid@4
+[ 38](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000019c _EqualSid@8
+[ 39](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001a8 _GetLengthSid@4
+[ 40](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001b4 _CopySid@12
+[ 41](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001c0 _FreeSid@4
+[ 42](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001cc _GetSidIdentifierAuthority@4
+[ 43](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001d8 _GetSidSubAuthorityCount@4
+[ 44](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001e4 _GetSidSubAuthority@8
+[ 45](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001f0 _LookupAccountSidA@28
+[ 46](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x000001fc _LookupAccountSidW@28
+[ 47](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000208 _LookupPrivilegeValueA@12
+[ 48](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000214 _MakeAbsoluteSD@44
+[ 49](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000220 _AllocateLocallyUniqueId@4
+[ 50](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000022c _LookupAccountNameA@28
+[ 51](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000238 _ImpersonateLoggedOnUser@4
+[ 52](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000244 _RevertToSelf@0
+
+
+
+Service.OBJ:     file format pe-i386
+
+SYMBOL TABLE:
+[  0](sec -2)(fl 0x00)(ty   0)(scl 103) (nx 1) 0x00000000 Service.asm
+File 
+[  2](sec  1)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .text
+AUX scnlen 0x60 nreloc 0 nlnno 0
+[  4](sec  2)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .data
+AUX scnlen 0x0 nreloc 0 nlnno 0
+[  6](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000000 _OpenSCManagerA@12
+[  7](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000000c _CreateServiceA@52
+[  8](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000018 _CloseServiceHandle@4
+[  9](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000024 _OpenServiceA@12
+[ 10](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000030 _DeleteService@4
+[ 11](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x0000003c _StartServiceA@12
+[ 12](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000048 _ControlService@12
+[ 13](sec  1)(fl 0x00)(ty  20)(scl   2) (nx 0) 0x00000054 _QueryServiceStatus@8
+
+
